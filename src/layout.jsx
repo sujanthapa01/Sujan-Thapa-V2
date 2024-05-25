@@ -4,7 +4,7 @@ import Navigation from './components/Navigation';
 
 function Layout() {
   return (
-    <div className='pl-[22rem] flex'>
+    <div className='xl:pl-[22rem] flex'>
       <Navigation />
       <Outlet />
     </div>

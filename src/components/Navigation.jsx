@@ -11,11 +11,11 @@ function Navigation() {
   const [active, setActive] = useState("Home");
 
   return (
-    <div className="">
-      <div className="flex flex-col justify-center items-center pl-5 pr-5 h-screen w-[6rem] bottom-2 border-r-[1px] border-gray-300">
-        <ul className="flex flex-col space-y-8">
+    <div className="absolute xl:static ">
+      <div className=" xl:flex  bottom-12 w xl:flex-col justify-center items-end xl:items-center pl-5 pr-5 xl:h-full w-[6rem] xl:bottom-2 xl:border-r-[1px] border-gray-300">
+        <div className="flex xl:flex-col space-y-8">
           {/*Nav Link1*/}
-          <li>
+         
             <NavLink
               to="/"
               activeClassName="active"
@@ -35,28 +35,27 @@ function Navigation() {
                 />
               )}
             </NavLink>
-          </li>
+        
           {/*Nav Link2*/}
-          <li>
-            <NavLink to="/Projects"
-            onClick={() =>setActive('Projects')}>
-             {active === 'Projects'? ( <img
-                className="hover:scale-[1.1] duration-200 cursor-pointer h-[28px]"
-                src={Porjectactive}
-                alt="Projects"
-              />
-) : ( <img
-  className="hover:scale-[1.1] duration-200 cursor-pointer h-[28px]"
-  src={projects}
-  alt="About"
-/>
-)}
-
+         
+            <NavLink to="/Projects" onClick={() => setActive("Projects")}>
+              {active === "Projects" ? (
+                <img
+                  className="hover:scale-[1.1] duration-200 cursor-pointer h-[28px]"
+                  src={Porjectactive}
+                  alt="Projects"
+                />
+              ) : (
+                <img
+                  className="hover:scale-[1.1] duration-200 cursor-pointer h-[28px]"
+                  src={projects}
+                  alt="About"
+                />
+              )}
             </NavLink>
-          </li>
-
+          
           {/*Nav Link3*/}
-          <li>
+       
             <NavLink
               to="/Aboutme"
               activeClassName="active"
@@ -76,8 +75,8 @@ function Navigation() {
                 />
               )}
             </NavLink>
-          </li>
-        </ul>
+         
+        </div>
       </div>
     </div>
   );

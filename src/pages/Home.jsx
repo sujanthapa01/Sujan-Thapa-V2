@@ -15,13 +15,13 @@ function Home() {
           signup
         </button>
       </header>
-      <div className="flex">
-      <section className="w-[60%] ml-[3.5rem] mr-8 mt-4">
+      <div className="xl:flex w-full">
+      <section className="xl:w-[100%] pl-4 pr-4  xl:ml-[3.5rem] xl:mr-8 mt-4">
         <p className="text-sm text-gray-500 pt-2 pb-2 text-center sig-text ">
           @sujanthapa 2024
         </p>
         <section className=" ">
-          <div className="h-[15rem] w-[50rem] overflow-hidden rounded-xl ">
+          <div className="h-[15rem] xl:w-full overflow-hidden rounded-xl ">
             {" "}
             <img
               className=" object-cover rounded-md hover:scale-[1.1] -translate-y-[20px] duration-200 "
@@ -95,7 +95,7 @@ function Home() {
           </section>
         </section>
       </section>
-      <section className="w-full">conatiner 2</section>
+      <section className="xl:w-full">conatiner 2</section>
       </div>
     </div>
   );
