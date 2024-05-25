@@ -2,8 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.cdnfonts.com/s/29460/Best Signature Font - Reguler.woff');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 body{
     font-family: "Inter", sans-serif;
 }
+.homemade-apple-regular {
+    font-family: "Homemade Apple", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .sig-text{
+    font-family:'best signature font' ,cursive;
+  }

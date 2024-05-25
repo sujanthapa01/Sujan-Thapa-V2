@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client'
 import Home from './pages/Home'
 import './index.css'
 import Layout from './layout'
+import Aboutme from './pages/Aboutme'
+import Projects from './pages/Projects'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 
@@ -12,6 +14,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="" element={<Home />} />
+          <Route path="Aboutme" element={<Aboutme />} />
+          <Route path="Projects" element={<Projects />} />
         </Route>
       </Routes>
     </BrowserRouter>
