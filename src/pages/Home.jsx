@@ -9,19 +9,19 @@ import spotify from "../assets/spotify.png";
 function Home() {
   return (
     <div className="   ">
-      <header className="w-full flex justify-end pr-[20rem]  ">
+      <header className="w-full flex justify-end xl:pr-[20rem]">
         {" "}
-        <button className="bg-sky-500 text-white h-8 pl-8 pr-8  rounded-full mt-4">
+        <button className="bg-sky-500 text-white mr-[1.5rem] h-7 xl:h-8 pl-8 pr-8 rounded-full mt-4">
           signup
         </button>
       </header>
       <div className="xl:flex w-full">
-      <section className="xl:w-[100%] pl-4 pr-4  xl:ml-[3.5rem] xl:mr-8 mt-4">
+      <section className="xl:w-[100%] pl-[1.5rem] pr-[1.5rem]  xl:ml-[3.5rem] xl:mr-8 mt-4">
         <p className="text-sm text-gray-500 pt-2 pb-2 text-center sig-text ">
           @sujanthapa 2024
         </p>
         <section className=" ">
-          <div className="h-[15rem] xl:w-full overflow-hidden rounded-xl ">
+          <div className="h-[9rem] xl:h-[15rem] xl:w-full overflow-hidden rounded-xl ">
             {" "}
             <img
               className=" object-cover rounded-md hover:scale-[1.1] -translate-y-[20px] duration-200 "
@@ -37,21 +37,21 @@ function Home() {
                 Sujan Thapa
               </span>
             </p>
-            <h1 className="text-[3rem] leading-[50px] mt-2">
+            <h1 className="text-[2.25rem] xl:text-[3rem] leading-[50px] mt-2">
               <strong>
                 I engineer <span className="text-green-500"> end-to-end </span>
                 solutions that users{" "}
                 <span className="text-pink-400"> love</span>
               </strong>
             </h1>
-            <p className="text-xl text-gray-500 mt-4">
+            <p className="text-lg xl:text-xl text-gray-500 mt-4">
               Passionate full-stack student 🧑‍🎓 crafting seamless digital
               experiences. Outside the code, I'm a music enthusiast{" "}
             </p>
           </div>
 
           <section className="flex flex-col mt-14">
-            <div className="flex gap-8 ">
+            <div className="flex pl-2 pr-2 xl:pl-[0px] xl:pr-[0px] xl:gap-8 justify-between xl:justify-normal  ">
               <a href="https://github.com/sujanthapa01" target="blank">
                 <img
                   className="h-[38px] hover:scale-[1.2] duration-200 cursor-pointer"
@@ -85,7 +85,7 @@ function Home() {
             </div>
 
             <div>
-              <p className="text-gray-700 mt-8 text-[1.2rem]">
+              <p className="text-gray-700 mt-8 text-lg xl:text-[1.2rem]">
                 I'm a full-stack student learning about data and algorithms in
                 C++. I also enjoy music and exploring the internet. I'm
                 passionate about software engineering and eager to learn and
