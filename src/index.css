@@ -17,3 +17,15 @@ body{
   .sig-text{
     font-family:'best signature font' ,cursive;
   }
+
+  .background{
+    background-color: rgba(32, 32, 32, 0.438);
+  }
+  span.span + img#arrow {
+    transition: transform 300ms;
+    transform: translateX(0);
+}
+
+span.span:hover + img#arrow {
+    transform: translateX(10px);
+}
