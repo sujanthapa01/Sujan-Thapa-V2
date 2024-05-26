@@ -8,20 +8,27 @@ import spotify from "../assets/spotify.png";
 
 function Home() {
   return (
-    <div className="   ">
-      <header className="w-full flex justify-end xl:pr-[20rem]">
-        {" "}
-        <button className="bg-sky-500 text-white mr-[1.5rem] h-7 xl:h-8 pl-8 pr-8 rounded-full mt-4">
-          signup
-        </button>
-      </header>
-      <div className="xl:flex w-full">
-      <section className="xl:w-[100%] pl-[1.5rem] pr-[1.5rem]  xl:ml-[3.5rem] xl:mr-8 mt-4">
-        <p className="text-sm text-gray-500 pt-2 pb-2 text-center sig-text ">
-          @sujanthapa 2024
-        </p>
-        <section className=" ">
-          <div className="h-[9rem] xl:h-[15rem] xl:w-full overflow-hidden rounded-xl ">
+    <main className="grow px-6 pr-[1.5rem] pl-[1.5rem] overflow-hidden ">
+      <div className="  xl:w-[1072px] h-full mx-auto   ">
+        <header>
+          <div className=" flex items-center justify-end h-16 w-full  before:block ">
+            {" "}
+            <div className="grow flex justify-end space-x-6 h-auto items-center  md:justify-end  ">
+              <p className="text-sm text-gray-500 pt-2 pb-2 text-center sig-text  xl:hidden md:hidden lg:hidden ">
+                @sujanthapa 2024
+              </p>
+              <button className="btn-sm text-slate-100 bg-sky-500 hover:bg-sky-600 rounded-full h-8 w-[6rem]">
+                signup
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <section className=" max-w-[700px] pt-8 pb-12">
+          <p className="text-sm text-gray-500 pt-2 pb-2 text-center sig-text hidden xl:block md:block lg:block">
+            @sujanthapa 2024
+          </p>
+          <div className="h-[12rem]  xl:w-full overflow-hidden rounded-xl ">
             {" "}
             <img
               className=" object-cover rounded-md hover:scale-[1.1] -translate-y-[20px] duration-200 "
@@ -49,55 +56,67 @@ function Home() {
               experiences. Outside the code, I'm a music enthusiast{" "}
             </p>
           </div>
-
-          <section className="flex flex-col mt-14">
-            <div className="flex pl-2 pr-2 xl:pl-[0px] xl:pr-[0px] xl:gap-8 justify-between xl:justify-normal  ">
-              <a href="https://github.com/sujanthapa01" target="blank">
-                <img
-                  className="h-[38px] hover:scale-[1.2] duration-200 cursor-pointer"
-                  src={github}
-                  alt=""
-                />
-              </a>
-              <a href="" target="blank">
-                <img
-                  className="h-[38px] hover:scale-[1.2] duration-200 cursor-pointer"
-                  src={instagram}
-                  alt=""
-                />
-              </a>
-              <a href="" target="blank">
-                {" "}
-                <img
-                  className="h-[38px] hover:scale-[1.2] duration-200 cursor-pointer"
-                  src={mail}
-                  alt=""
-                />
-              </a>
-              <a href="" target="blank">
-                {" "}
-                <img
-                  className="h-[38px] hover:scale-[1.2] duration-200 cursor-pointer"
-                  src={spotify}
-                  alt=""
-                />
-              </a>
-            </div>
-
-            <div>
-              <p className="text-gray-700 mt-8 text-lg xl:text-[1.2rem]">
-                I'm a full-stack student learning about data and algorithms in
-                C++. I also enjoy music and exploring the internet. I'm
-                passionate about software engineering and eager to learn and
-                create.
-              </p>
-            </div>
-          </section>
         </section>
-      </section>
-      <section className="xl:w-full">conatiner 2</section>
+
+        <section className="grow md:flex space-y-8 md:space-y-0 md:space-x-8 pb-16 md:pb-20">
+          <div className="grow">
+            <div className=" max-w-[700px] ">
+              <div className="space-y-10 ">
+                <li className="flex flex-wrap gap-10 mt-[37px] text-slate-500 dark:text-slate-400">
+                  <a href="https://github.com/sujanthapa01" target="blank">
+                    <img
+                      className="h-[38px] hover:scale-[1.2] duration-200 cursor-pointer"
+                      src={github}
+                      alt=""
+                    />
+                  </a>
+                  <a href="" target="blank">
+                    <img
+                      className="h-[38px] hover:scale-[1.2] duration-200 cursor-pointer"
+                      src={instagram}
+                      alt=""
+                    />
+                  </a>
+                  <a href="" target="blank">
+                    {" "}
+                    <img
+                      className="h-[38px] hover:scale-[1.2] duration-200 cursor-pointer"
+                      src={mail}
+                      alt=""
+                    />
+                  </a>
+                  <a href="" target="blank">
+                    {" "}
+                    <img
+                      className="h-[38px] hover:scale-[1.2] duration-200 cursor-pointer"
+                      src={spotify}
+                      alt=""
+                    />
+                  </a>
+                </li>
+              </div>
+            </div>
+
+            <p className="text-gray-700 mt-8 text-lg xl:text-[1.2rem]">
+              I'm a full-stack student learning about data and algorithms in
+              C++. I also enjoy music and exploring the internet. I'm passionate
+              about software engineering and eager to learn and create.
+            </p>
+          </div>
+          <aside className="md:w-[240px] lg:w-[300px]  shrink-0">
+            <div className="space-y-6">
+              <div >
+                <img src={img1} className="rounded-2xl " alt="" srcset="" />
+                <a href="" className="absolute">
+                  {" "}
+                  <div className="absolute" > hiii</div>
+                </a>
+              </div>
+            </div>
+          </aside>
+        </section>
       </div>
-    </div>
+    </main>
   );
 }
 
