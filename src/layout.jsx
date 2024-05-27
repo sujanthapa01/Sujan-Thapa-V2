@@ -4,7 +4,7 @@ import Navigation from './components/Navigation';
 
 function Layout() {
   return (
-    <div className='max-w-7xl mx-auto flex grow'>
+    <div className='max-w-7xl  m-auto flex grow'>
       <Navigation />
       <Outlet />
     </div>

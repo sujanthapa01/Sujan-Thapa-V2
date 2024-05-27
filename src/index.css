@@ -29,3 +29,5 @@ body{
 span.span:hover + img#arrow {
     transform: translateX(10px);
 }
+
+/* *{border:.5px dashed rgba(0, 0, 0, 0.315) ;} */
