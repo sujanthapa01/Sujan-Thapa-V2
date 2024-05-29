@@ -18,7 +18,7 @@ function Navigation() {
           {/*Nav Link1*/}
             <NavLink
               to="/"
-              activeClassName="active"
+              
               onClick={() => setActive("Home")}
             >
               {active === "Home" ? (
@@ -58,7 +58,7 @@ function Navigation() {
        
             <NavLink
               to="/Aboutme"
-              activeClassName="active"
+              
               onClick={() => setActive("Aboutme")}
             >
               {active === "Aboutme" ? (
