@@ -49,23 +49,22 @@ function cards() {
             <div>
               {" "}
               <div>
-                <span className=" text-gray-400 text-sm ">
+                <span className=" text-xs text-slate-400 dark:text-slate-500">
                   {" "}
                   <span className="text-xl text-thin">🫂 </span> Thanks For
                   visiting my site!
                 </span>
-                <p className="text-start text-xl mt-2 font-bold text-gray-800">
+                <p className="font-aspekta font-[650] mb-1">
                   It's a pleasure
                 </p>
               </div>
               <div className="mt-4">
                 <div className="">
                   <a href="">
-                    <div className="text-blue-400 flex items-center gap-5">
+                    <div className="text-sky-500 flex gap-2 group text-sm mt-4">
                       {" "}
-                      <span className="span">
+                      
                         Check out the message box{" "}
-                      </span>{" "}
                       <img
                         src={Arrow}
                         className=" h-[28px]"
