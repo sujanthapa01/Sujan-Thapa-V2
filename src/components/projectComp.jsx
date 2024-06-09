@@ -1,6 +1,6 @@
 import React, { Component, useEffect, useState } from "react";
 
-function ProjectComp() {
+function ProjectComp({ maxProjects }) {
   class ErrorBoundary extends Component {
     constructor(props) {
       super(props);
@@ -30,13 +30,11 @@ function ProjectComp() {
 
   useEffect(() => {
     const cachedData = localStorage.getItem('githubRepos');
-    console.log(CacheStorage)
     if (cachedData) {
       setRepos(JSON.parse(cachedData));
       setLoading(false);
     } else {
       fetchData();
-  
     }
   }, []);
 
@@ -47,16 +45,17 @@ function ProjectComp() {
         throw new Error('Failed to fetch data');
       }
       const json = await response.json();
-      console.log(json);
       setRepos(json);
       setLoading(false);
-      // localStorage.setItem('githubRepos', JSON.stringify(json));
-      } catch (error) {
-        setError(error);
-        setLoading(false);
-        }
-        };
-   
+      localStorage.setItem('githubRepos', JSON.stringify(json));
+    } catch (error) {
+      setError(error);
+      setLoading(false);
+    }
+  };
+
+  const limitedProjects = repos.slice(0, maxProjects);
+
   return (
     <div>
       <ErrorBoundary>
@@ -66,7 +65,7 @@ function ProjectComp() {
           <div>Error: {error.message}</div>
         ) : (
           <div className="grid sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-5">
-            {repos.map(repo => (
+            {limitedProjects.map(repo => (
               <a
                 key={repo.id}
                 href={repo.html_url}
