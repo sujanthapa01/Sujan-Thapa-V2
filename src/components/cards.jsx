@@ -79,7 +79,7 @@ function cards() {
                   <a href="">
                     <div className="text-blue-400 flex items-center gap-5">
                       {" "}
-                      <span className="span">Send me a Email </span>{" "}
+                      <a className="span" href="mailto:sujanthapast0@gmail.com">Send me a Email </a>{" "}
                       <img
                         src={Arrow}
                         className="h-[28px]"

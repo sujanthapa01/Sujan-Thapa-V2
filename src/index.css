@@ -85,3 +85,12 @@ span.span:hover + img#arrow {
     background-color: rgb(198, 23, 23);
   }
 }
+
+.input::placeholder{
+  font-size: smaller;
+}
+
+.input{
+  outline: none;
+  caret-color: red;
+}

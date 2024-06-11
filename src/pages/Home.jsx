@@ -65,12 +65,12 @@ function Home() {
                       alt=""
                     />
                   </a>
-                  <a href="" target="blank">
+                  <a  href="mailto:sujanthapast0@gmail.com" target="blank">
                     {" "}
                     <img
                       className="h-[38px] hover:scale-[1.2] duration-200 cursor-pointer"
                       src={mail}
-                      alt=""
+                    
                     />
                   </a>
                   <a href="" target="blank">
@@ -89,7 +89,9 @@ function Home() {
               C++. I also enjoy music and exploring the internet. I'm passionate
               about software engineering and eager to learn and create.
             </p>
-            <ProjectComp maxProjects={4} />
+            <div className="mt-4">
+            <ProjectComp  maxProjects={4} />
+            </div>
           </div>
           <aside className="md:w-[240px] lg:w-[300px] shrink-0 space-y-6">
             <Cards />
