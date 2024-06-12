@@ -4,7 +4,7 @@ function Signup() {
   const [showPass, setShowPass] = useState(false);
   const [type, setType] = useState("Password");
   const [showText, setShowText] = useState("show");
-  const [inputValue, setInputValue] = useState(""); // Start with empty string
+  const [inputValue, setInputValue] = useState(" "); // Start with empty string
 
   function handleInputChange(event) {
     // Update the state with the new value from the input
@@ -64,7 +64,7 @@ function Signup() {
         <Link>
           {" "}
           <p className="text-sm">
-            <span className="hover:text-red-400">forget password</span> |{" "}
+            <span className="hover:text-red-400">forget password</span> |
             <Link  to="CreateAccount" className="text-blue-400">signup</Link>  
           </p>{" "}
         </Link>
