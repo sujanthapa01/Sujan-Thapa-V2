@@ -63,13 +63,13 @@ function Signin() {
             </button>
           </div>
   
-          <Link>
+          <span>
             {" "}
             <p className="text-sm">
               <span className="hover:text-red-400">forget password</span> |{" "}
-              <Link  to="CreateAccount" className="text-blue-400">signup</Link>  
+              <Link  to="/signup" className="text-blue-400">signup</Link>  
             </p>{" "}
-          </Link>
+          </span>
         </div>
       </main>
     )

@@ -6,16 +6,20 @@ import Layout from "./layout";
 import AboutMe from "./pages/Aboutme";
 import Projects from "./pages/Projects";
 import SignIn from "./pages/SignIn";
-import CreateAccount from "./pages/CreateAccount";
+import SignUp from "./pages/SignUp";
+import PageNotFound from "./pages/PageNotFound";
 import "./index.css";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/">
+>
           <Route path="signin" element={<SignIn />} />
-          <Route path="signin/CreateAccount" element={<CreateAccount />} />
+        <Route path="signup" element={<SignUp />} />
+        
+
+        <Route >
         </Route>
         
         <Route path="/" element={<Layout />}>
@@ -23,6 +27,8 @@ const App = () => {
           <Route path="aboutme" element={<AboutMe />} />
           <Route path="projects" element={<Projects />} />
         </Route>
+
+        <Route path="*" element={<PageNotFound/>}/>
       </Routes>
     </BrowserRouter>
   );

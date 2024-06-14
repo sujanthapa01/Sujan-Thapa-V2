@@ -4,7 +4,7 @@ function Signup() {
   const [showPass, setShowPass] = useState(false);
   const [type, setType] = useState("Password");
   const [showText, setShowText] = useState("show");
-  const [inputValue, setInputValue] = useState(" "); // Start with empty string
+  const [inputValue, setInputValue] = useState(""); // Start with empty string
 
   function handleInputChange(event) {
     // Update the state with the new value from the input
