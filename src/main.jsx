@@ -14,21 +14,22 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
->
-          <Route path="signin" element={<SignIn />} />
-        <Route path="signup" element={<SignUp />} />
-        
+       
+      
 
-        <Route >
+        <Route>
+        <Route path="signin" element={<SignIn />} />
+        <Route path="signup" element={<SignUp />} />
         </Route>
-        
+
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="aboutme" element={<AboutMe />} />
           <Route path="projects" element={<Projects />} />
+           
         </Route>
 
-        <Route path="*" element={<PageNotFound/>}/>
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );
