@@ -1,10 +1,10 @@
 import React from 'react'
-import Header from '../components/Header'
+import Dasboard from '../pages/Dashboard'
 
 function Aboutme() {
   return (
     <div>
-      
+      <Dasboard/>
       
     </div>
   )

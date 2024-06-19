@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -28,6 +29,8 @@ function SignUp() {
       setShowPass(false);
     }
   }
+
+
 
   return (
     <main className="flex justify-center h-[100vh] items-center">
