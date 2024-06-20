@@ -9,6 +9,7 @@ import Cards from "../components/cards";
 import Header from "../components/Header";
 import ProjectComp from "../components/projectComp";
 
+
 function Home() {
   return (
     <main className="grow px-6 pr-[1.5rem] pl-[1.5rem] overflow-hidden">

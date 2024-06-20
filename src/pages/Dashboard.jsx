@@ -4,7 +4,12 @@ import  useAuthenticatedFetch from '../Hooks/AuthHook'
 
 const Dashboard = () => {
   const { data, loading, error } = useAuthenticatedFetch('http://localhost:7000/protected-route');
-console.log(data)
+  try{
+    console.log('reponse data',data)
+  }catch(error){
+    console.error(error)
+  }
+
   return (
     <div>
       {loading ? (
@@ -14,7 +19,7 @@ console.log(data)
       ) : (
         <div>
           <h2>Data from server:</h2>
-          <pre>{JSON.stringify(data. null, 2)}</pre>
+          <pre>{JSON.stringify(data.user.email)}</pre>
         </div>
       )}
     </div>

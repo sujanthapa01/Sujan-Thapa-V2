@@ -19,15 +19,9 @@ function SignUp() {
   }
 
   function HandleShowPass() {
-    if (showPass === false) {
-      setType("password");
-      setShowText("show");
-      setShowPass(true);
-    } else {
-      setType("text");
-      setShowText("hide");
-      setShowPass(false);
-    }
+    setShowPass(!showPass);
+    setType(showPass ? "password" : "text");
+    setShowText(showPass ? "show" : "hide");
   }
 
 
