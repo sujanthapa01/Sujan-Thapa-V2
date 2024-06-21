@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import useLogin from '../../Hooks/useLogin'
+import useLogin from '../../Hooks/useLogin';
+import useLogout from '../../Hooks/useLogout';
 
 
 function Signin() {
@@ -9,8 +10,7 @@ function Signin() {
   const [showText, setShowText] = useState("show");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { handleLogin, error, success } = useLogin();
-
+  const { handleLogin, error, success, loading } = useLogin();
 
   const handleShowPass = () => {
     setShowPass(!showPass);
@@ -20,9 +20,8 @@ function Signin() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-   await handleLogin(email, password);
+    await handleLogin(email, password);
   };
-
 
   return (
     <main className="flex justify-center h-[100vh] items-center">
@@ -33,7 +32,7 @@ function Signin() {
           </Link>
         </div>
         <h1 className="uppercase">Signin</h1>
-        <form onSubmit={handleLogin} className="flex flex-col gap-4 items-center mt-2">
+        <form onSubmit={onSubmit} className="flex flex-col gap-4 items-center mt-2">
           <div className="flex justify-center flex-col gap-2 w-[14rem]">
             <input
               maxLength="26"
@@ -57,13 +56,13 @@ function Signin() {
           </div>
           <button
             type="submit"
-            onClick={onSubmit}
             className="border-blue-200 border w-[6rem] bg-blue-400 pl-2 pr-2 pt-1 pb-1 rounded-md hover:bg-blue-300 duration-100"
           >
             Signin
           </button>
-
-          {success ? (<p className="text-green-500 h-1 pb-4 error">{sucess}</p>) : (<p className="text-red-500 h-1 pb-4 error">{error}</p>)}
+          {loading && <p>Loading...</p>}
+          {success && <p className="text-green-500 h-1 pb-4">{success}</p>}
+          {error && <p className="text-red-500 h-1 pb-4">{error}</p>}
         </form>
         <span className='mt-4'>
           <p className="text-sm">

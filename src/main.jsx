@@ -2,8 +2,10 @@ import React, {useState} from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home, SignUp, Signin, PageNotFound, Projects, AboutMe, Layout} from "./index";
+import { Provider } from "react-redux";
+import { store } from "./App/Store";
 import "./index.css";
-import Dashboard from "./pages/Dashboard";
+
 
 
 
@@ -11,10 +13,7 @@ const App = () => {
 
   const [token, setToken] = useState(localStorage.getItem('token'));
 
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    setToken(null);}
-    
+
   return (
 <>
 <div className="App">
@@ -43,7 +42,7 @@ const App = () => {
 };
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>
+  </Provider>
 );

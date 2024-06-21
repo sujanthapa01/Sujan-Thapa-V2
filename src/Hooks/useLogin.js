@@ -1,37 +1,31 @@
-import { useState } from 'react';
+// src/hooks/useLogin.js
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { useEffect } from 'react';
+import { login, clearError, clearSuccess } from '../features/Auth/AuthSlice';
 
 const useLogin = () => {
-    const [error, setError] = useState(null);
-    const [success, setSuccess] = useState(null);
-    const [login, setLogin] = useState(false) ;
-    
-    const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { token, error, success, isLogin, loading } = useSelector((state) => state.auth);
 
-  const handleLogin = async (email, password) => {
-    try {
-      const response = await axios.post('http://localhost:7000/login', { email, password });
-      const  {token}  = response.data;
-      if(!token){
-        setLogin(false);
-      }else{
-        setLogin(true)
+  const handleLogin = (email, password) => {
+    dispatch(login({ email, password })).then((response) => {
+      if (response.meta.requestStatus === 'fulfilled') {
+        navigate('/');
       }
-      console.log('Response data:', response.data);
-      localStorage.setItem('token', token);
-      setSuccess('Login successful');
-      navigate('/');
-    } catch (error) {
-      console.error('Login error:', error.response);
-      setError('Invalid email or password');
-      setTimeout(() => {
-        setError(null);
-      }, 5000);
-    }
+    });
   };
 
-  return { handleLogin, error, success, login};
+  useEffect(() => {
+    if (error) {
+      setTimeout(() => {
+        dispatch(clearError());
+      }, 5000);
+    }
+  }, [error, dispatch]);
+
+  return { handleLogin, error, success, isLogin, token, loading };
 };
 
 export default useLogin;
