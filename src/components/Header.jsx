@@ -11,8 +11,8 @@ function Header() {
 
   return (
     <header>
-      <div className="flex items-center justify-end h-16 w-full before:block ">
-        <div className="grow flex justify-end space-x-6 h-auto items-center md:justify-end">
+      <div className="flex items-center justify-between h-16 before:block">
+        <div className="grow flex justify-between md:justify-end space-x-4">
           <p className="text-sm text-gray-500 pt-2 pb-2 text-center sig-text xl:hidden md:hidden lg:hidden">
             @sujanthapa {year}
           </p>

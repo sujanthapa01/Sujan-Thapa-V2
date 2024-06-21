@@ -43,7 +43,7 @@ function cards() {
         </div>
       </div>
 
-      <div className=" rotate-[1deg]  ">
+      <div className=" rotate-[1deg] mt-6  ">
         <div className="overflow-hidden w-full h-[200px] rounded-md border-[1px] border-gray-300 ">
           <div className="p-6  h-full text-start">
             <div>
@@ -95,6 +95,9 @@ function cards() {
           </div>
         </div>
       </div>
+
+
+
     </>
   );
 }
