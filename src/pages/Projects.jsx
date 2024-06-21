@@ -23,8 +23,11 @@ function Projects() {
                 </div>
               </section>
               <aside className="md:w-[240px] lg:w-[300px]  shrink-0 space-y-6">
-                <Cards></Cards>
+              <div className="sticky top-12 space-y-6">
+                <Cards ></Cards>
+                </div>
               </aside>
+
             </section>
           </div>
         </div>
