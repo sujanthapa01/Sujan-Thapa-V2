@@ -131,3 +131,42 @@ span.span:hover + img#arrow {
   background: linear-gradient(61deg, rgba(255,255,255,0) 0%, rgba(205,238,90,0.04805672268907568) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#cdee5a",GradientType=1);
 }
+
+
+.tooltip-container {
+  /* GitHub green color */
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+
+}
+
+
+.tooltip {
+  --background-tooltip: #6e7681;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5em;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  overflow: visible;
+  background: var(--background-tooltip);
+  color: white; 
+  width: auto;
+  height: 30px;
+  font-size: 11px;
+  text-align: center;
+}
+
+.tooltip-container:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+}
