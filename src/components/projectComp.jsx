@@ -18,7 +18,7 @@ function ProjectComp({ maxProjects }) {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('https://api.github.com/users/sujanthapa01/repos');
+      const response = await fetch('https://api.github.com/usefrs/sujanthapa01/repos');
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
@@ -39,12 +39,13 @@ function ProjectComp({ maxProjects }) {
     <div>
       {loading ? (
         <div className="grid sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-5">
-          {[...Array(maxProjects)].map((_, index) => (
-            <div key={index} className="rounded-lg bg-transparent border border-slate-Z00 dark:border-slate-800 hover:border-blue-300 duration-500 dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30 odd:-rotate-1 even:rotate-1 hover:rotate-0 transition-transform duration-700 hover:duration-100 ease-in-out p-5">
+          {limitedProjects.map(repo => (
+            <div key={repo} className="rounded-lg bg-transparent border border-slate-Z00 dark:border-slate-800 hover:border-blue-300 duration-500 dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30 odd:-rotate-1 even:rotate-1 hover:rotate-0 transition-transform duration-700 hover:duration-100 ease-in-out p-5">
               <Skeleton height={40} width={40} circle={true} />
               <Skeleton height={30} width="20rem" style={{ marginBottom: '1rem' }} />
               <Skeleton height={20} count={3} style={{ marginBottom: '0.5rem' }} />
             </div>
+
           ))}
         </div>
       ) : (

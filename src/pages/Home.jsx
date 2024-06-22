@@ -12,8 +12,8 @@ import ProjectComp from "../components/projectComp";
 
 function Home() {
   return (
-    <main className="grow px-6 pr-[1.5rem] pl-[1.5rem] overflow-hidden">
-      <div className="xl:w-[1072px] h-full mx-auto">
+    < >
+     
         <Header />
         <section>
         <div className="max-w-[700px] ">
@@ -101,8 +101,8 @@ function Home() {
             <Cards />
           </aside>
         </section>
-      </div>
-    </main>
+     
+    </>
   );
 }
 
