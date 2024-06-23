@@ -13,7 +13,7 @@ function Navigation() {
   const [active, setActive] = useState("Home");
 
   return (
-    <div className="fixed w-full md:sticky bottom-0 md:top-0 h-16 md:w-24 shrink-0 md:h-screen overflow-y-auto no-scrollbar border-r dark:border-slate-800 z-50 backdrop-filter backdrop-blur-lg">
+    <div className="fixed w-full md:sticky bottom-0 md:top-0 h-16 md:w-24 shrink-0 md:h-screen overflow-x-hidden no-scrollbar border-r dark:border-slate-800 z-50 backdrop-filter backdrop-blur-lg">
       <div className="h-full w-full flex flex-row md:flex-col justify-ce items-center after:flex-1 after:mt-auto">
         <div className="hidden md:block md:flex-1 ">
           <div class="flex justify-center my-4 tooltip-container">

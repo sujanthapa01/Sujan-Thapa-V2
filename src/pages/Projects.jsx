@@ -14,7 +14,7 @@ function Projects() {
 
             <section>
 
-              <h1 className="font-bold text-[2.5rem] mb-12 ">Some Of My Projects</h1>
+              <h1 className="font-bold text-[2.5rem] mb-12 text-center ">Some Of My Projects</h1>
               <div>
                 <ProjectComp />
               </div>
