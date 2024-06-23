@@ -18,7 +18,7 @@ function ProjectComp({ maxProjects }) {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('https://api.github.com/users/suanthapa01/repos');
+      const response = await fetch('https://api.github.com/users/sujanthapa01/repos');
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
