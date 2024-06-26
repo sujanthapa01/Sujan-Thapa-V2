@@ -80,7 +80,7 @@ function ProjectComp({ maxProjects }) {
                 <p className="text-sm text-slate-500 dark:text-slate-400 mb-2">
                   {repo.description}
                 </p>
-              </div>
+              </div>              
               <div className="text-sky-500 flex justify-end">
                 <svg
                   className="fill-current"
