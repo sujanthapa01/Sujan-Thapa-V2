@@ -19,7 +19,7 @@ const Dashboard = () => {
       ) : (
         <div>
           <h2>Data from server:</h2>
-          <pre>{JSON.stringify(data.user.email)}</pre>
+          <pre>{JSON.stringify(data.user.name)}</pre>
         </div>
       )}
     </div>
