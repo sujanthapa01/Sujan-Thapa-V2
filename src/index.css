@@ -134,7 +134,6 @@ span.span:hover + img#arrow {
 
 
 .tooltip-container {
-  /* GitHub green color */
   position: relative;
   cursor: pointer;
   transition: all 0.2s;

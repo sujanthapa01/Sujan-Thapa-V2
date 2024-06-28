@@ -17,9 +17,9 @@ function Navigation() {
       <div className="h-full w-full flex flex-row md:flex-col justify-ce items-center after:flex-1 after:mt-auto">
         <div className="hidden md:block md:flex-1 ">
           <div class="flex justify-center my-4 tooltip-container">
-          <span class="tooltip rounded-md">@SujanThapa</span>
-              <img src={myimg} height='32' width='32' className="rounded-full" data-tip="sujanthapa" alt="" srcset="" />
-            </div>
+            <span class="tooltip rounded-md">@SujanThapa</span>
+            <NavLink to="/"><img src={myimg} height='32' width='32' className="rounded-full" data-tip="sujanthapa" alt="" srcset="" /></NavLink>
+          </div>
 
         </div>
 

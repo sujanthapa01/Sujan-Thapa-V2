@@ -18,10 +18,10 @@ function Home() {
         <section>
         <div className="max-w-[700px] ">
           {/* Your existing content */}
+          <div className="pt-8 pb-10">
           <p className="text-sm text-gray-500 pt-2 pb-2 text-center sig-text hidden xl:block md:block lg:block">
             @sujanthapa 2024
           </p>
-          <div className="pt-8 pb-10">
             
           <div className="h-[12rem]  xl:w-full overflow-hidden rounded-xl ">
             <img
