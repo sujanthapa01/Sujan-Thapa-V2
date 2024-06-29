@@ -6,6 +6,8 @@ import projects from "../assets/Projects-icon.png";
 import Abotmeactive from "../assets/Aboutme-active.png";
 import Porjectactive from "../assets/Project-active.png";
 import Aboutme from "../assets/Aboutme-icon.png";
+import Chat from "../assets/chat.png"
+import Chatactive from "../assets/chat-active.png"
 import { NavLink } from "react-router-dom";
 import myimg from "../assets/myimg.jpeg";
 
@@ -77,6 +79,26 @@ function Navigation() {
                     className="hover:scale-[1.1] duration-200 cursor-pointer h-[28px]"
                     src={Aboutme}
                     alt="Aboutme"
+                  />
+                )}
+              </NavLink></li>
+
+              <li className="md:py-2"> <NavLink
+                to="/chat"
+
+                onClick={() => setActive("chat")}
+              >
+                {active === "chat" ? (
+                  <img
+                    className="hover:scale-[1.1] duration-200 cursor-pointer h-[28px]"
+                    src={Chatactive}
+                    alt=""
+                  />
+                ) : (
+                  <img
+                    className="hover:scale-[1.1] duration-200 cursor-pointer h-[28px]"
+                    src={Chat}
+                    alt="chat"
                   />
                 )}
               </NavLink></li>

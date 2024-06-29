@@ -6,6 +6,7 @@ import SignUp from "./pages/Login/SignUp";
 import Signin from "./pages/Login/SignIn";
 import Layout from "./layout/layout";
 import PageNotFound from "./pages/PageNotFound"
+import Chat from "../src/pages/chat"
 
 // what's wrong
-export { Home, Header, AboutMe, SignUp, Signin, Layout, PageNotFound, Projects };
+export { Home, Header, AboutMe, SignUp, Signin, Layout, PageNotFound, Projects, Chat };

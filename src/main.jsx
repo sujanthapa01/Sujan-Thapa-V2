@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, SignUp, Signin, PageNotFound, Projects, AboutMe, Layout } from "./index";
+import { Home, SignUp, Signin, PageNotFound, Projects, AboutMe, Layout, Chat } from "./index";
 import { Provider } from "react-redux";
 import { store } from "./App/Store";
 import "./index.css";
@@ -24,8 +24,10 @@ const App = () => {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="aboutme" element={<AboutMe />} />
-            <Route path="projects" element={<Projects />} >
-            </Route>
+            <Route path="projects" element={<Projects />} />
+            <Route path="Chat" element={<Chat />} />
+            
+            
 
           </Route>
 
