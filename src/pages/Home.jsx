@@ -8,6 +8,7 @@ import spotify from "../assets/spotify.png";
 import Cards from "../components/cards";
 import Header from "../components/Header";
 import ProjectComp from "../components/projectComp";
+import { Link } from "react-router-dom";
 
 
 function Home() {
@@ -95,6 +96,8 @@ function Home() {
             </div>
             <div className="mt-4">
             <ProjectComp  maxProjects={4} />
+            <div className="mt-2">See list of my all <Link to="projects" className="text-blue-400">in project page. </Link></div>
+           
             </div>
           </div>
           <aside className="md:w-[240px] lg:w-[300px] shrink-0">
