@@ -35,7 +35,7 @@ function Navigation() {
         <div className="flex-1 grow flex items-center w-full">
           <nav className="w-full">
             <ul className="md:space-y-4 flex flex-row items-center w-screen justify-evenly md:flex-col md:justify-start md:items-center md:w-24">
-              <li className="py-2 pl-2 pr-2 rounded-xl duration-300 hover:bg-blue-200">
+              <li className="py-2 pl-2 pr-2 rounded-xl duration-300 active:hover:bg-blue-200 md:hover:bg-blue-200 lg:hover:bg-blue-200 xl:hover:bg-blue-200">
                 <NavLink to="/" end>
                   {({ isActive }) => (
                     <img
@@ -46,7 +46,7 @@ function Navigation() {
                   )}
                 </NavLink>
               </li>
-              <li className="py-2 pl-2 pr-2 rounded-xl duration-300 hover:bg-blue-200">
+              <li className="py-2 pl-2 pr-2 rounded-xl duration-300 active:hover:bg-blue-200 md:hover:bg-blue-200 lg:hover:bg-blue-200 xl:hover:bg-blue-200">
                 <NavLink to="/Projects">
                   {({ isActive }) => (
                     <img
@@ -57,7 +57,7 @@ function Navigation() {
                   )}
                 </NavLink>
               </li>
-              <li className="py-2 pl-2 pr-2 rounded-xl duration-300 hover:bg-blue-200">
+              <li className="py-2 pl-2 pr-2 rounded-xl duration-300 active:hover:bg-blue-200 md:hover:bg-blue-200 lg:hover:bg-blue-200 xl:hover:bg-blue-200">
                 <NavLink to="/Aboutme">
                   {({ isActive }) => (
                     <img
@@ -68,7 +68,7 @@ function Navigation() {
                   )}
                 </NavLink>
               </li>
-              <li className="py-2 pl-2 pr-2 rounded-xl duration-300 hover:bg-blue-200">
+              <li className="py-2 pl-2 pr-2 rounded-xl duration-300 active:hover:bg-blue-200 md:hover:bg-blue-200 lg:hover:bg-blue-200 xl:hover:bg-blue-200">
                 <NavLink to="/chat">
                   {({ isActive }) => (
                     <img
