@@ -32,48 +32,47 @@ function Navigation() {
             </NavLink>
           </div>
         </div>
-        <p>{active}</p>
         <div className="flex-1 grow flex items-center w-full">
           <nav className="w-full">
             <ul className="md:space-y-4 flex flex-row items-center w-screen justify-evenly md:flex-col md:justify-start md:items-center md:w-24">
-              <li className="md:py-2">
+              <li className="py-2 pl-2 pr-2 rounded-xl duration-300 hover:bg-blue-200">
                 <NavLink to="/" end>
                   {({ isActive }) => (
                     <img
-                      className="hover:scale-[1.1] duration-200 cursor-pointer h-[28px]"
+                      className="hover:scale-[2px] duration-200 cursor-pointer h-[28px]"
                       src={isActive ? activeHome : home}
                       alt="home"
                     />
                   )}
                 </NavLink>
               </li>
-              <li className="md:py-2">
+              <li className="py-2 pl-2 pr-2 rounded-xl duration-300 hover:bg-blue-200">
                 <NavLink to="/Projects">
                   {({ isActive }) => (
                     <img
-                      className="hover:scale-[1.1] duration-200 cursor-pointer h-[28px]"
+                      className="hover:scale-[2px] duration-200 cursor-pointer h-[28px]"
                       src={isActive ? Porjectactive : projects}
                       alt="Projects"
                     />
                   )}
                 </NavLink>
               </li>
-              <li className="md:py-2">
+              <li className="py-2 pl-2 pr-2 rounded-xl duration-300 hover:bg-blue-200">
                 <NavLink to="/Aboutme">
                   {({ isActive }) => (
                     <img
-                      className="hover:scale-[1.1] duration-200 cursor-pointer h-[28px]"
+                      className="hover:scale-[2px] duration-200 cursor-pointer h-[28px]"
                       src={isActive ? Abotmeactive : Aboutme}
                       alt="Aboutme"
                     />
                   )}
                 </NavLink>
               </li>
-              <li className="md:py-2">
+              <li className="py-2 pl-2 pr-2 rounded-xl duration-300 hover:bg-blue-200">
                 <NavLink to="/chat">
                   {({ isActive }) => (
                     <img
-                      className="hover:scale-[1.1] duration-200 cursor-pointer h-[28px]"
+                      className="hover:scale-[2px] duration-200 cursor-pointer h-[28px]"
                       src={isActive ? Chatactive : Chat}
                       alt="chat"
                     />
