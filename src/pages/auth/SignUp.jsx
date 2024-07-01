@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useSignup from "../../Hooks/useSignup";
 
-function SignUp() {
+export default function SignUp(){
   const [showPass, setShowPass] = useState(false);
   const [type, setType] = useState("password");
   const [showText, setShowText] = useState("show");
@@ -89,8 +89,8 @@ function SignUp() {
         <span className="mt-2">
           <p className="text-sm">
             <span className="">Already have an account? </span> |{" "}
-            <Link to="/signin" className="text-blue-400">
-              Sign In
+            <Link to="/login" className="text-blue-400">
+             login
             </Link>
           </p>
         </span>
@@ -114,4 +114,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+

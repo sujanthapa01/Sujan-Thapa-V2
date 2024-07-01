@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, SignUp, Signin, PageNotFound, Projects, AboutMe, Layout, Chat } from "./index";
+import { Home, SignUp, Login, PageNotFound, Projects, AboutMe, Layout, Chat, ForgetPassword} from "./index";
 import { Provider } from "react-redux";
 import { store } from "./App/Store";
 import "./index.css";
+
 
 
 
@@ -17,8 +18,9 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route>
-            <Route path="signin" element={<Signin />} />
+            <Route path="login" element={<Login />} />
             <Route path="signup" element={<SignUp />} />
+            <Route path="forget-password" element={<ForgetPassword  />} />
           </Route>
 
           <Route path="/" element={<Layout />}>

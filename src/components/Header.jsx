@@ -27,7 +27,7 @@ function Header() {
             </Link>
           ) : (
             <Link
-              to="/signin" // Assuming profile route for logged-in users
+              to="/login" // Assuming profile route for logged-in users
               className="btn-sm text-slate-100 bg-sky-500 flex justify-center items-center hover:bg-sky-600 rounded-full h-8 w-[6rem]"
             >
               <span>Signin</span>
