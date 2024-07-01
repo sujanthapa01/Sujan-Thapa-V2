@@ -41,7 +41,7 @@ export default function SignUp(){
             </svg>
           </Link>
         </div>
-        <h1 className="uppercase">Sign Up</h1>
+        <h1 className="uppercase">create account</h1>
         <div className="flex flex-col gap-4 items-center mt-2">
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 items-center">
             <div className="flex justify-center flex-col gap-2 w-[14rem]">
