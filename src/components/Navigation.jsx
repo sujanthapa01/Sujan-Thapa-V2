@@ -12,14 +12,14 @@ import Chatactive from "../assets/chat-active.png";
 import myimg from "../assets/myimg.jpeg";
 
 function Navigation() {
-  const [active, setActive] = useState('home');
-  const location = useLocation();
-  const pathname = location.pathname;
-  const pathSegment = pathname.split("/")[1];
+  // const [active, setActive] = useState('home');
+  // const location = useLocation();
+  // const pathname = location.pathname;
+  // const pathSegment = pathname.split("/")[1];
 
-  useEffect(() => {
-    setActive(pathSegment || 'home');
-  }, [pathname]);
+  // useEffect(() => {
+  //   setActive(pathSegment || 'home');
+  // }, [pathname]);
 
   return (
     <div className="fixed w-full md:sticky bottom-0 md:top-0 h-16 md:w-24 shrink-0 md:h-screen overflow-x-hidden no-scrollbar border-r dark:border-slate-800 z-50 backdrop-filter backdrop-blur-lg">
@@ -36,7 +36,7 @@ function Navigation() {
           <nav className="w-full">
             <ul className="md:space-y-4 flex flex-row items-center w-screen justify-evenly md:flex-col md:justify-start md:items-center md:w-24">
               <li className="py-2 pl-2 pr-2 rounded-xl duration-300 active:hover:bg-blue-200 md:hover:bg-blue-200 lg:hover:bg-blue-200 xl:hover:bg-blue-200">
-                <NavLink to="/" end>
+                <NavLink to="/" >
                   {({ isActive }) => (
                     <img
                       className="hover:scale-[2px] duration-200 cursor-pointer h-[28px]"
