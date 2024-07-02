@@ -1,54 +1,53 @@
-import { createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-
+// Async thunk for resetting password
 export const resetPassword = createAsyncThunk(
-    'auth/resetpassword',
-    async({ email }, { rejectWithValue }) => {
-       
-          try{
-              const response = await axios.post('http://localhost:7000/forget-password',{email});
-              const data = response.json();
-              console.log(data);
-              return data;
-
-          }catch(error){
-            return rejectWithValue(error.response.data);
-          }
-     
-    });
-const resetpassword = createSlice({
-    name : 'resetpassword',
-    initialState : {
-        error: null,
-        success : null,
-        loading : false
-
-    },reducers : {
-        clearError :  (state ) => {
-            state.error = null
-        },
-        clearSuccess : (state) => {
-            state.success = null;
-        }
-    },
-    extraReducers : (builder) => {
-        builder,
-        add.case(resetPassword.pending, (state) => {
-            state.loading = true;
-        })
-        add.case(resetPassword.fulfilled, (state,action) => {
-           state.loading = false,
-           state.error = null;
-           state.success = action.payload;
-        })
-        add.case(resetPassword.rejected, (state,action) =>{
-            state.loading = false,
-            state.error = action.payload;
-            state.success = null ;
-        })
+  'auth/resetPassword',
+  async ({ email }, { rejectWithValue }) => {
+    try {
+      const response = await axios.post('http://localhost:7000/forget-password', { email });
+      console,log(response.json())
+      return response.data; // Corrected this line
+    } catch (error) {
+      return rejectWithValue(error.response.data);
     }
+  }
+);
 
-})
-export const {clearError,clearSuccess} = resetPassword.action;
-export default resetPassword.reducers;
+// Slice for managing reset password state
+const resetPasswordSlice = createSlice({
+  name: 'resetPassword',
+  initialState: {
+    error: null,
+    success: null,
+    loading: false
+  },
+  reducers: {
+    clearError: (state) => {
+      state.error = null;
+    },
+    clearSuccess: (state) => {
+      state.success = null;
+    }
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(resetPassword.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(resetPassword.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+        state.success = action.payload;
+      })
+      .addCase(resetPassword.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+        state.success = null;
+      });
+  }
+});
+
+export const { clearError, clearSuccess } = resetPasswordSlice.actions;
+export default resetPasswordSlice.reducer;

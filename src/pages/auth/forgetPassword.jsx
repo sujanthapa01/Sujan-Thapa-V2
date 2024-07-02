@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import useLogin from '../../Hooks/useLogin';
-import useLogout from '../../Hooks/useLogout';
+import useResetpassword from '../../Hooks/useResetpassword';
 
+export default function forgetPassword() {
 
-export default function forgetPassword(){
-  
+  const { handleResetPassword, error, success, loading } = useResetpassword();
   const [email, setEmail] = useState("");
+
   const onSubmit = async (e) => {
     e.preventDefault();
-    await handleLogin(email, password);
-  };
+    handleResetPassword(email);
+  }
+
   return (
     <main className="flex justify-center h-[100vh] items-center">
+
+
+     
+
+
       <div className="wrapper flex items-center flex-col w-full md:w-[25rem] lg:w-[25rem] xl:w-[25rem] h-full  md:h-auto lg:h-auto xl:h-auto justify-center md:justify-around lg:justify-around xl:justify-around p-1 bg-transparent backdrop-blur-sm  lg:border xl:border lg:rounded-md xl:rounded-md">
         <div className='flex justify-start w-full pl-4 pt-4 items-center hidden md:block lg:block xl:block '>
           <Link to="/">
@@ -24,23 +30,25 @@ export default function forgetPassword(){
           <div className="flex justify-center flex-col gap-2 w-[14rem]">
             <input
               maxLength="26"
+              required
               type="text"
               placeholder="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="input border pl-2 w-full rounded-md border-b-2 border-b-blue-300"
             />
-            
+
           </div>
-          <button
+
+          {loading ?  (<button
             type="submit"
-            className="border-blue-200 border w-[6rem] bg-blue-400 pl-2 pr-2 pt-1 pb-1 rounded-md hover:bg-blue-300 duration-100"
-          >
-            Signin
-          </button>
-          {/* {loading && <p>Loading...</p>}
+            className="border-blue-200 border flex justify-center items-center w-[6rem] h-[2.1rem] bg-blue-400 pl-2 pr-2  rounded-full hover:bg-blue-300 duration-100"
+          > <div class="chaotic-orbit"></div></button>) : (<button
+            type="submit"
+            className="border-blue-200 border w-[6rem] bg-blue-400 pl-2 pr-2 pt-1 pb-1 rounded-full hover:bg-blue-300 duration-100"
+          > send</button>)}
           {success && <p className="text-green-500 h-1 pb-4">{success}</p>}
-          {error && <p className="text-red-500 h-1 pb-4">{error}</p>} */}
+          {error && <p className="text-red-500 h-1 pb-4">{error}</p>}
         </form>
         <span className='mt-4'>
           <p className="text-sm">
@@ -53,6 +61,7 @@ export default function forgetPassword(){
           </Link>
         </div>
       </div>
+      
     </main>
   );
 }
