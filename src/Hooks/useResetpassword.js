@@ -19,24 +19,6 @@ const useResetPassword = () => {
         });
     };
 
-    useEffect(() => {
-        if (error) {
-          // Handle/display error, e.g., show a notification
-          alert(`Error: ${error}`);
-        }
-    
-        if (success) {
-          // Handle/display success, e.g., show a notification
-          alert('Password reset link sent successfully!');
-        }
-    
-        // Cleanup errors/success messages on component unmount or on new submission
-        return () => {
-          dispatch(clearError("error"));
-          dispatch(clearSuccess("success"));
-        };
-      }, [error, success, dispatch]);
-
     return { handleResetPassword, error, success, loading, clearError, clearSuccess };
 }
 

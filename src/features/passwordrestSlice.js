@@ -8,7 +8,7 @@ export const resetPassword = createAsyncThunk(
     try {
       const response = await axios.post('http://localhost:7000/forget-password', { email });
       console,log(response.json())
-      return response.data; // Corrected this line
+      return response.data; 
     } catch (error) {
       return rejectWithValue(error.response.data);
     }
@@ -39,11 +39,11 @@ const resetPasswordSlice = createSlice({
       .addCase(resetPassword.fulfilled, (state, action) => {
         state.loading = false;
         state.error = null;
-        state.success = action.payload;
+        state.success = "email sent";
       })
       .addCase(resetPassword.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.payload;
+        state.error = "error";
         state.success = null;
       });
   }

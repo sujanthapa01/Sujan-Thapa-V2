@@ -26,7 +26,7 @@ export default function SignUp(){
   return (
     <main className="flex justify-center h-[100vh] items-center">
       <div className="wrapper flex items-center flex-col w-full md:w-[25rem] lg:w-[25rem] xl:w-[25rem] h-full  md:h-auto lg:h-auto xl:h-auto justify-center md:justify-around lg:justify-around xl:justify-around p-1 bg-transparent backdrop-blur-sm lg:border xl:border lg:rounded-md xl:rounded-md">
-        <div className="flex justify-start w-full pl-4 pt-4 items-center hidden md:block lg:block xl:block ">
+        <div className=" justify-start w-full pl-4 pt-4 items-center hidden md:block lg:block xl:block ">
           <Link to="/">
             <svg
               fill="#000000"
@@ -94,7 +94,7 @@ export default function SignUp(){
             </Link>
           </p>
         </span>
-        <div className=" flex justify-center mt-[4rem]  w-full pl-4 pt-4 items-center block md:hidden lg:hidden xl:hidden">
+        <div className=" flex justify-center mt-[4rem]  w-full pl-4 pt-4 items-center md:hidden lg:hidden xl:hidden">
           <Link to="/">
             <svg
               fill="#000000"

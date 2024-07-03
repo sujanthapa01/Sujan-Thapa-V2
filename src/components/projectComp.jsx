@@ -28,11 +28,8 @@ function ProjectComp({ maxProjects }) {
       localStorage.setItem('githubRepos', JSON.stringify(json));
     } catch (error) {
       console.error('Error fetching data:', error);
-      // Keep loading state as true to continue showing skeletons
     }
   };
-
-  // Slice the repos array to get only the first maxProjects number of projects
   const limitedProjects = repos.slice(0, maxProjects);
 
   return (
@@ -42,7 +39,7 @@ function ProjectComp({ maxProjects }) {
           {[...Array(maxProjects)].map((index) => (
           <div
           key={index}
-          className="rounded-lg bg-transparent border border-slate-200 dark:border-slate-800 hover:border-blue-300 duration-500 dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30 odd:-rotate-1 even:rotate-1 hover:rotate-0 transition-transform duration-700 hover:duration-100 ease-in-out p-5"
+          className="rounded-lg bg-transparent border border-slate-200 dark:border-slate-800 hover:border-blue-300  dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30 odd:-rotate-1 even:rotate-1 hover:rotate-0 transition-transform duration-700 hover:duration-100 ease-in-out p-5"
         >
           <Skeleton height={40} width={40} circle={true} />
           <Skeleton height={30} width="20rem" style={{ marginBottom: '1rem' }} />
@@ -56,7 +53,7 @@ function ProjectComp({ maxProjects }) {
             <a
               key={repo.id}
               href={repo.html_url}
-              className="rounded-lg bg-white border border-slate-200 dark:border-slate-800 hover:border-blue-300 duration-500 dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30 odd:-rotate-1 even:rotate-1 hover:rotate-0 transition-transform duration-700 hover:duration-100 ease-in-out p-5"
+              className="rounded-lg bg-white border border-slate-200 dark:border-slate-800 hover:border-blue-300 dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30 odd:-rotate-1 even:rotate-1 hover:rotate-0 transition-transform duration-700 hover:duration-100 ease-in-out p-5"
             >
               <div className="flex flex-col h-full">
                 <div className="">
