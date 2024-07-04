@@ -1,28 +1,28 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// const url = 'http://localhost:7000/forget-password';
-// Async thunk for resetting password
 export const resetPassword = createAsyncThunk(
   'auth/resetPassword',
   async ({ email }, { rejectWithValue }) => {
     try {
       const response = await axios.post("http://localhost:7000/forget-password", { email });
-      const data = response.json()
-      console.log(data);
-      return data; 
+      return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
     }
   }
 );
-
 const resetPasswordSlice = createSlice({
   name: 'resetPassword',
   initialState: {
     error: null,
     success: null,
     loading: false
+  }, reducers: {
+    resetState: (state) => {
+      state.error = null;
+      state.success = null;
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -37,10 +37,9 @@ const resetPasswordSlice = createSlice({
       .addCase(resetPassword.fulfilled, (state, action) => {
         state.loading = false;
         state.error = null;
-        state.success = "email sent";
+        state.success = "email sent to";
       });
   }
 });
-
-export const {error, success, loading, data} = resetPasswordSlice.actions;
+export const {error, success, loading, resetState} = resetPasswordSlice.actions;
 export default resetPasswordSlice.reducer;

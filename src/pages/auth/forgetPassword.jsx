@@ -10,7 +10,7 @@ export default function forgetPassword() {
   const onSubmit = async (e) => {
     e.preventDefault();
     handleResetPassword(email);
-    console.log(success,"\n",data,"\n",error)
+    console.log(success,"/n","/n",error)
   }
 
   return (
@@ -21,9 +21,10 @@ export default function forgetPassword() {
             <svg fill="#000000" width="20px" height="20px" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><path d="M50,24H6.83L27.41,3.41a2,2,0,0,0,0-2.82,2,2,0,0,0-2.82,0l-24,24a1.79,1.79,0,0,0-.25.31A1.19,1.19,0,0,0,.25,25c0,.07-.07.13-.1.2l-.06.2a.84.84,0,0,0,0,.17,2,2,0,0,0,0,.78.84.84,0,0,0,0,.17l.06.2c0,.07.07.13.1.2a1.19,1.19,0,0,0,.09.15,1.79,1.79,0,0,0,.25.31l24,24a2,2,0,1,0,2.82-2.82L6.83,28H50a2,2,0,0,0,0-4Z" /></svg>
           </Link>
         </div>
-        <h1 className="uppercase">forget password</h1>
+        <h1 className="uppercase ">forget password</h1>
         
-{success? ({success}): (<form onSubmit={onSubmit} className="flex flex-col gap-4 items-center mt-2">
+{success? (<div className='text-green-400 text-center pb-4 '>
+  {success} <br />{email}</div>): (<form onSubmit={onSubmit} className="flex flex-col gap-4 items-center mt-2">
           <div className="flex justify-center flex-col gap-2 w-[14rem]">
             <input
               maxLength="26"
