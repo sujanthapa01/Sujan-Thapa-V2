@@ -83,8 +83,11 @@ export default function SignUp(){
               Sign Up
             </button>
           </form>
-          {error && <p className="text-red-500">{error}</p>}
-          {success && <p className="text-green-500">Signup successful!</p>}
+          <div className='h-7 p-1'>
+          {error && <p className="text-red-500 h-1 pb-4 ">{error}</p>}
+          {success && <p className="text-green-500 h-1 pb-4">{success}</p>}
+          </div>
+         
         </div>
         <span className="mt-2">
           <p className="text-sm">

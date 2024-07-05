@@ -23,8 +23,9 @@ export default function Signin(){
     await handleLogin(email, password);
   };
 
-  return (
+  return ( 
     <main className="flex justify-center h-[100vh] items-center">
+
       <div className="wrapper flex items-center flex-col w-full md:w-[25rem] lg:w-[25rem] xl:w-[25rem] h-full  md:h-auto lg:h-auto xl:h-auto justify-center md:justify-around lg:justify-around xl:justify-around p-1 bg-transparent backdrop-blur-sm  lg:border xl:border lg:rounded-md xl:rounded-md">
         <div className='justify-start w-full pl-4 pt-4 items-center hidden md:block lg:block xl:block '>
           <Link to="/">
@@ -54,19 +55,24 @@ export default function Signin(){
               <button type="button" onClick={handleShowPass} className="text-sm">{showText}</button>
             </div>
           </div>
-          <button
+       {loading? (<button
+              type="submit"
+              className="border-blue-200 border flex justify-center items-center w-[6rem] h-[2.1rem] bg-blue-400 pl-2 pr-2  rounded-full hover:bg-blue-300 duration-100"
+            > <div class="loader"></div></button>) :(<button
             type="submit"
             className="border-blue-200 border w-[6rem] bg-blue-400 pl-2 pr-2 pt-1 pb-1 rounded-full hover:bg-blue-300 duration-100"
           >
             login
-          </button>
-          {loading && <p>Loading...</p>}
+          </button>)}
+          <div className='h-7 p-1'>
+          {error && <p className="text-red-500 h-1 pb-4 ">{error}</p>}
           {success && <p className="text-green-500 h-1 pb-4">{success}</p>}
-          {error && <p className="text-red-500 h-1 pb-4">{error}</p>}
+          </div>
+         
         </form>
         <span className='mt-4'>
           <p className="text-sm">
-            <Link to="/forget-password" className="hover:text-red-400">Forget password</Link> |{" "}
+            <Link to="/forget-password" className="hover:text-red-400 text-red-400">Forget password</Link> |{" "}
             <Link to="/signup" className="text-blue-400">Signup</Link>
           </p>
         </span>

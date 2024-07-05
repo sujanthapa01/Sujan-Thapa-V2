@@ -28,7 +28,7 @@ export const useSignup = () => {
         if (success) {
             setTimeout(() => {
                 dispatch(clearSuccess());
-            }, 5000);
+            }, 2000);
         }
     }, [success, dispatch]);
 

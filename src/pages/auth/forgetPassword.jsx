@@ -10,7 +10,7 @@ export default function forgetPassword() {
   const onSubmit = async (e) => {
     e.preventDefault();
     handleResetPassword(email);
-    console.log(success,"/n","/n",error)
+    console.log(success, "/n", "/n", error)
   }
 
   return (
@@ -22,37 +22,40 @@ export default function forgetPassword() {
           </Link>
         </div>
         <h1 className="uppercase ">forget password</h1>
-        
-{success? (<div className='text-green-400 text-center pb-4 '>
-  {success} <br />{email}</div>): (<form onSubmit={onSubmit} className="flex flex-col gap-4 items-center mt-2">
-          <div className="flex justify-center flex-col gap-2 w-[14rem]">
-            <input
-              maxLength="26"
-              required
-              type="text"
-              placeholder="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="input border pl-2 w-full rounded-md border-b-2 border-b-blue-300"
-            />
 
+        {success ? (<div className='text-green-400 text-center pb-4 '>
+          {success} <br />{email}</div>) : (<form onSubmit={onSubmit} className="flex flex-col gap-4 items-center mt-2">
+            <div className="flex justify-center flex-col gap-2 w-[14rem]">
+              <input
+                maxLength="26"
+                required
+                type="text"
+                placeholder="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="input border pl-2 w-full rounded-md border-b-2 border-b-blue-300"
+              />
+
+            </div>
+
+            {loading ? (<button
+              type="submit"
+              className="border-blue-200 border flex justify-center items-center w-[6rem] h-[2.1rem] bg-blue-400 pl-2 pr-2  rounded-full hover:bg-blue-300 duration-100"
+            > <div class="loader"></div></button>) : (<button
+              type="submit"
+              className="border-blue-200 border w-[6rem] bg-blue-400 pl-2 pr-2 pt-1 pb-1 rounded-full hover:bg-blue-300 duration-100"
+            > send</button>)}
+                <div className='h-7 p-1'>
+          {error && <p className="text-red-500 h-1 pb-4 ">{error}</p>}
           </div>
-
-          {loading ?  (<button
-            type="submit"
-            className="border-blue-200 border flex justify-center items-center w-[6rem] h-[2.1rem] bg-blue-400 pl-2 pr-2  rounded-full hover:bg-blue-300 duration-100"
-          > <div className="chaotic-orbit"></div></button>) : (<button
-            type="submit"
-            className="border-blue-200 border w-[6rem] bg-blue-400 pl-2 pr-2 pt-1 pb-1 rounded-full hover:bg-blue-300 duration-100"
-          > send</button>)}
-          {error && <p className="text-red-500 h-1 pb-4">{error}</p>}
-          <span className='mt-4'>
-          <p className="text-sm">
-            <Link to="/signup" className="text-blue-400">Signup</Link>
-          </p>
-        </span>
-        </form>
-       )}
+         
+            <span className='mt-4'>
+              <p className="text-sm">
+                <Link to="/signup" className="text-blue-400">Signup</Link>
+              </p>
+            </span>
+          </form>
+        )}
 
 
 
@@ -62,7 +65,7 @@ export default function forgetPassword() {
           </Link>
         </div>
       </div>
-      
+
     </main>
   );
 }
