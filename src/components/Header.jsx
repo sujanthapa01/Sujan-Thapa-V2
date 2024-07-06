@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import useLogin from '../Hooks/useLogin';
 import useLogout from '../Hooks/useLogout';
+import ThemeTogglel from './themeToggleButton/themeToggle';
+import { useSelector } from 'react-redux';
 
 function Header() {
   const d = new Date();
@@ -9,13 +11,17 @@ function Header() {
   const { isLogin } = useLogin();
   const handleLogout = useLogout();
 
+  const theme = useSelector((state) => state.theme.theme)
+
   return (
     <header>
       <div className="flex items-center justify-between h-16 before:block">
         <div className="grow flex justify-between md:justify-end space-x-4">
-          <p className="text-sm text-gray-500 pt-2 pb-2 text-center sig-text xl:hidden md:hidden lg:hidden">
+          <p className={`app ${theme} text-sm text-gray-500 pt-2 pb-2 text-center sig-text xl:hidden md:hidden lg:hidden`}>
             @sujanthapa {year}
           </p>
+
+         <ThemeTogglel/>
 
           {isLogin ? (
             <Link

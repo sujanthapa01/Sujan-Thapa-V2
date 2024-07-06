@@ -10,11 +10,11 @@ import Header from "../components/Header";
 import ProjectComp from "../components/projectComp";
 import { Link } from "react-router-dom";
 
-
 function Home() {
+
+
   return (
-    < >
-     
+    <>
         <Header />
         <section>
         <div className="max-w-[700px] ">
