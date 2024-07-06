@@ -20,25 +20,26 @@ function Header() {
           <p className={`app ${theme} text-sm text-gray-500 pt-2 pb-2 text-center sig-text xl:hidden md:hidden lg:hidden`}>
             @sujanthapa {year}
           </p>
+          <div className='flex gap-6 '>
+            <ThemeTogglel />
 
-         <ThemeTogglel/>
-
-          {isLogin ? (
-            <Link
-              to=""
-              onClick={handleLogout}
-              className="btn-sm text-slate-100 bg-sky-500 flex justify-center items-center hover:bg-sky-600 rounded-full h-8 w-[6rem]"
-            >
-              <span>Logout</span>
-            </Link>
-          ) : (
-            <Link
-              to="/login" // Assuming profile route for logged-in users
-              className="btn-sm text-slate-100 bg-sky-500 flex justify-center items-center hover:bg-sky-600 rounded-full h-8 w-[6rem]"
-            >
-              <span>Signin</span>
-            </Link>
-          )}
+            {isLogin ? (
+              <Link
+                to=""
+                onClick={handleLogout}
+                className="btn-sm text-slate-100 bg-sky-500 flex justify-center items-center hover:bg-sky-600 rounded-full h-8 w-[6rem]"
+              >
+                <span>Logout</span>
+              </Link>
+            ) : (
+              <Link
+                to="/login" // Assuming profile route for logged-in users
+                className="btn-sm text-slate-100 bg-sky-500 flex justify-center items-center hover:bg-sky-600 rounded-full h-8 px-[1.5rem]"
+              >
+                <span>Signin</span>
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </header>
