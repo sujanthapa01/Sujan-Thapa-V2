@@ -204,24 +204,6 @@ span.span:hover + img#arrow {
   width: 0;
 }
 
-/* ------ Animation ------ */
-@keyframes keyframes-fill {
-  0% {
-    transform: rotate(-360deg) scale(0);
-    opacity: 0;
-  }
-
-  75% {
-    transform: rotate(25deg);
-  }
-}
-
-
-/* .app.light {
-  background-color: #ffffff;
-  color: #000000;
-} */
-
 .app.dark {
   /* background-color: #15202b; */
   /* background-color: #22303c; */
@@ -229,25 +211,3 @@ span.span:hover + img#arrow {
   
   color: #ffffff;
 }
-
-/* .header.light, .footer.light {
-  background-color: #f0f0f0;
-  color: #000000;
-} */
-
-/* .header.dark, .footer.dark {
-  background-color: #444444;
-  color: #ffffff;
-} */
-/* 
-button {
-  margin: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.content {
-  text-align: center;
-  margin-top: 50px;
-} */

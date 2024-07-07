@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useLogin from '../../Hooks/useLogin';
-import useLogout from '../../Hooks/useLogout';
 
 
 export default function Signin(){
@@ -58,7 +57,7 @@ export default function Signin(){
        {loading? (<button
               type="submit"
               className="border-blue-200 border flex justify-center items-center w-[6rem] h-[2.1rem] bg-blue-400 pl-2 pr-2  rounded-full hover:bg-blue-300 duration-100"
-            > <div class="loader"></div></button>) :(<button
+            > <div className="loader"></div></button>) :(<button
             type="submit"
             className="border-blue-200 border w-[6rem] bg-blue-400 pl-2 pr-2 pt-1 pb-1 rounded-full hover:bg-blue-300 duration-100"
           >
