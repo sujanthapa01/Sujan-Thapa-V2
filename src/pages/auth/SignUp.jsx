@@ -51,7 +51,7 @@ export default function SignUp(){
                 placeholder="Full name"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="input border pl-2 w-full rounded-md border-b-2 border-b-blue-300"
+                className="input border pl-2 w-full rounded-md border-b-2 border-b-blue-300 dark:text-black"
               />
               <input
                 maxLength="26"
@@ -59,7 +59,7 @@ export default function SignUp(){
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="input border pl-2 w-full rounded-md border-b-2 border-b-blue-300"
+                className="input border pl-2 w-full rounded-md border-b-2 border-b-blue-300  dark:text-black"
               />
               <div className="flex flex-col items-end">
                 <input
@@ -68,7 +68,7 @@ export default function SignUp(){
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="input border w-full rounded-md border-b-2 pl-2 border-b-blue-300"
+                  className="input border w-full rounded-md border-b-2 pl-2 border-b-blue-300  dark:text-black"
                 />
                 <button type="button" onClick={HandleShowPass} className="text-sm">
                   {showText}
@@ -78,7 +78,7 @@ export default function SignUp(){
             <button
               type="submit"
               disabled={loading}
-              className="border-blue-200 border w-[6rem] bg-blue-400 pl-2 pr-2 pt-1 pb-1 rounded-full hover:bg-blue-300 duration-100"
+              className="border-blue-200 border w-[6rem] bg-blue-400 pl-2 pr-2 pt-1 pb-1 rounded-full hover:bg-blue-300 duration-100 dark:hover:bg-blue-600 dark:bg-blue-500"
             >
               Sign Up
             </button>
@@ -100,6 +100,7 @@ export default function SignUp(){
         <div className=" flex justify-center mt-[4rem]  w-full pl-4 pt-4 items-center md:hidden lg:hidden xl:hidden">
           <Link to="/">
             <svg
+            
               fill="#000000"
               width="20px"
               height="20px"

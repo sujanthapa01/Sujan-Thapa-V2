@@ -33,7 +33,7 @@ export default function forgetPassword() {
                 placeholder="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="input border pl-2 w-full rounded-md border-b-2 border-b-blue-300"
+                className="input border pl-2 w-full rounded-md border-b-2 border-b-blue-300 dark:text-black"
               />
 
             </div>
@@ -43,7 +43,7 @@ export default function forgetPassword() {
               className="border-blue-200 border flex justify-center items-center w-[6rem] h-[2.1rem] bg-blue-400 pl-2 pr-2  rounded-full hover:bg-blue-300 duration-100"
             > <div className="loader"></div></button>) : (<button
               type="submit"
-              className="border-blue-200 border w-[6rem] bg-blue-400 pl-2 pr-2 pt-1 pb-1 rounded-full hover:bg-blue-300 duration-100"
+              className="border-blue-200 border w-[6rem] bg-blue-400 pl-2 pr-2 pt-1 pb-1 rounded-full hover:bg-blue-300 duration-100 dark:hover:bg-blue-600 dark:bg-blue-500"
             > send</button>)}
                 <div className='h-7 p-1'>
           {error && <p className="text-red-500 h-1 pb-4 ">{error}</p>}

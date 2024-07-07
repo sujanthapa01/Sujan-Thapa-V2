@@ -6,8 +6,8 @@ import img3 from "../assets/img3.png";
 function cards() {
   return (
     <>
-      <div className="  xl:rotate-0 md:rotate-0 lg:rotate-0 rounded-md ">
-        <div style={{ position: "relative" }} className="overflow-hidden ">
+      <div className="  xl:rotate-0 md:rotate-0 lg:rotate-0 rounded-md  ">
+        <div style={{ position: "relative" }} className="overflow-hidden  ">
           <img
             src={img3}
             className="rounded-2xl border-[2px] object-cover   "
@@ -25,7 +25,7 @@ function cards() {
               background: "rgba(32, 32, 32, 0.438)",
             }}
           >
-            <div className="p-6 text-center flex justify-between flex-col h-full text-white">
+            <div className="p-6 text-center flex justify-between flex-col h-full text-white ">
               <div className="">
                 <strong className="">
                   <span className="font-bold">Spotify - </span>Lost in Alluring
@@ -44,7 +44,7 @@ function cards() {
       </div>
 
       <div className=" rotate-[1deg] mt-6  ">
-        <div className="overflow-hidden w-full h-[200px] rounded-md border-[1px] border-gray-300 ">
+        <div className="overflow-hidden w-full h-[200px] rounded-md border-[1px] border-gray-300  dark:border-slate-800 dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30 ">
           <div className="p-6  h-full text-start">
             <div>
               {" "}

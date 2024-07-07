@@ -40,7 +40,7 @@ export default function Signin(){
               placeholder="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="input border pl-2 w-full rounded-md border-b-2 border-b-blue-300"
+              className="input border pl-2 w-full rounded-md border-b-2 border-b-blue-300 dark:text-black"
             />
             <div className="flex flex-col items-end">
               <input
@@ -49,7 +49,7 @@ export default function Signin(){
                 value={password}
                 placeholder="password"
                 onChange={(e) => setPassword(e.target.value)}
-                className="input border w-full rounded-md border-b-2 pl-2 border-b-blue-300"
+                className="input border w-full rounded-md border-b-2 pl-2 border-b-blue-300 dark:text-black"
               />
               <button type="button" onClick={handleShowPass} className="text-sm">{showText}</button>
             </div>
@@ -59,7 +59,7 @@ export default function Signin(){
               className="border-blue-200 border flex justify-center items-center w-[6rem] h-[2.1rem] bg-blue-400 pl-2 pr-2  rounded-full hover:bg-blue-300 duration-100"
             > <div className="loader"></div></button>) :(<button
             type="submit"
-            className="border-blue-200 border w-[6rem] bg-blue-400 pl-2 pr-2 pt-1 pb-1 rounded-full hover:bg-blue-300 duration-100"
+            className="border-blue-200 border w-[6rem] bg-blue-400 pl-2 pr-2 pt-1 pb-1 rounded-full hover:bg-blue-300 dark:hover:bg-blue-600 dark:bg-blue-500 kduration-100"
           >
             login
           </button>)}
@@ -72,7 +72,7 @@ export default function Signin(){
         <span className='mt-4'>
           <p className="text-sm">
             <Link to="/forget-password" className="hover:text-red-400 text-red-400">Forget password</Link> |{" "}
-            <Link to="/signup" className="text-blue-400">Signup</Link>
+            <Link to="/signup" className="text-blue-400 ">Signup</Link>
           </p>
         </span>
         <div className='flex justify-center mt-[4rem]  w-full pl-4 pt-4 items-center md:hidden lg:hidden xl:hidden '>
