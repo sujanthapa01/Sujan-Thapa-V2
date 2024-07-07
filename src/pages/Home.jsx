@@ -44,7 +44,7 @@ function Home() {
                 <span className="text-pink-400"> love</span>
               </strong>
             </h1>
-            <p className="text-lg xl:text-xl text-gray-500 mt-4">
+            <p className="text-lg xl:text-xl text-gray-500 mt-4 dark:text-slate-400">
               Passionate full-stack student 🧑‍🎓 crafting seamless digital
               experiences. Outside the code, I'm a music enthusiast{" "}
             </p>
@@ -87,7 +87,7 @@ function Home() {
                     />
                   </a>
                 </li>
-            <p className="text-gray-700 mt-8 text-lg xl:text-[1.2rem]">
+            <p className="text-gray-700 mt-8 text-lg xl:text-[1.2rem] dark:text-slate-300">
               I'm a full-stack student learning about data and algorithms in
               C++. I also enjoy music and exploring the internet. I'm passionate
               about software engineering and eager to learn and create.

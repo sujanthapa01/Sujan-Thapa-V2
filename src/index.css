@@ -18,6 +18,7 @@ background: -moz-radial-gradient(circle, rgba(180,170,58,0.08) 0%, rgba(180,252,
 background: -webkit-radial-gradient(circle, rgba(180,170,58,0.08) 0%, rgba(180,252,69,0) 100%);
 background: radial-gradient(circle, rgba(180,170,58,0.08) 0%, rgba(180,252,69,0) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b4aa3a",endColorstr="#b4fc45",GradientType=1);
+@apply transition-colors duration-500 ease-in-out;
 
 }
 .homemade-apple-regular {
@@ -216,28 +217,29 @@ span.span:hover + img#arrow {
 }
 
 
-.app.light {
+/* .app.light {
   background-color: #ffffff;
   color: #000000;
-}
+} */
 
 .app.dark {
   /* background-color: #15202b; */
   /* background-color: #22303c; */
-  background-color: #192734;
+  background-color: #0f172a;
+  
   color: #ffffff;
 }
 
-.header.light, .footer.light {
+/* .header.light, .footer.light {
   background-color: #f0f0f0;
   color: #000000;
-}
+} */
 
-.header.dark, .footer.dark {
+/* .header.dark, .footer.dark {
   background-color: #444444;
   color: #ffffff;
-}
-
+} */
+/* 
 button {
   margin: 20px;
   padding: 10px 20px;
@@ -248,4 +250,4 @@ button {
 .content {
   text-align: center;
   margin-top: 50px;
-}
+} */

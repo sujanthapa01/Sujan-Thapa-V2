@@ -25,7 +25,7 @@ export default function SignUp(){
 
   return (
     <main className="flex justify-center h-[100vh] items-center">
-      <div className="wrapper flex items-center flex-col w-full md:w-[25rem] lg:w-[25rem] xl:w-[25rem] h-full  md:h-auto lg:h-auto xl:h-auto justify-center md:justify-around lg:justify-around xl:justify-around p-1 bg-transparent backdrop-blur-sm lg:border xl:border lg:rounded-md xl:rounded-md">
+      <div className="wrapper  dark:border-slate-800 dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30 flex items-center flex-col w-full md:w-[25rem] lg:w-[25rem] xl:w-[25rem] h-full  md:h-auto lg:h-auto xl:h-auto justify-center md:justify-around lg:justify-around xl:justify-around p-1 bg-transparent backdrop-blur-sm lg:border xl:border lg:rounded-md xl:rounded-md">
         <div className=" justify-start w-full pl-4 pt-4 items-center hidden md:block lg:block xl:block ">
           <Link to="/">
             <svg
