@@ -14,7 +14,7 @@ function Projects() {
 
             <section>
 
-              <h1 className="font-bold text-[2.5rem] mb-12 text-center ">Some Of My <span className=" text-blue-400 inline-flex relative duration-200 cursor-pointer before:absolute before:inset-0 before:bg-blue-300 before:opacity-30 before:-z-10  hover:before:-rotate-0  before:-rotate-3 before:translate-y-1/4 before:h-12">Projects</span></h1>
+              <h1 className="font-bold text-[2rem]  md:text-[2.5rem] lg:text-[2.5rem] xl:text-[2.5rem] mb-12 text-center  ">Some Of My <span className=" text-blue-400 inline-flex relative duration-200 cursor-pointer before:absolute before:inset-0 before:bg-blue-300 before:opacity-30 before:-z-10  hover:before:-rotate-0  before:-rotate-3 before:translate-y-1/4 before:h-12 dark:underline">Projects</span></h1>
               <div>
                 <ProjectComp />
               </div>
