@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home, SignUp, Login, PageNotFound, Projects, AboutMe, Layout, Chat, ForgetPassword } from "./index";
@@ -9,9 +9,18 @@ import { useSelector } from 'react-redux';
 import "./index.css";
 
 const App = () => {
-  const theme = useSelector((state) => state.theme.theme)
+  const theme = useSelector((state) => state.theme.theme);
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+      document.body.style.backgroundColor = '#0f172a';
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.body.style.backgroundColor = '';
+    }
+  }, [theme]);
   return (
-    < main  className={`app ${theme === "dark" ? "dark" : "light"}`}>
+    < main >
       <div>
       </div>
       <BrowserRouter>

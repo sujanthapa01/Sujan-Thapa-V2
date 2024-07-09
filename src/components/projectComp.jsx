@@ -35,7 +35,7 @@ function ProjectComp({ maxProjects }) {
   return (
     <div>
       {loading ? (
-        <div className="grid sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-5">
+        <div className="grid sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-5  dark:border-slate-800 hover:border-blue-300  dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30">
           {[...Array(maxProjects)].map((index) => (
           <div
           key={index}

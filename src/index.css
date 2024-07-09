@@ -18,7 +18,10 @@ background: -moz-radial-gradient(circle, rgba(180,170,58,0.08) 0%, rgba(180,252,
 background: -webkit-radial-gradient(circle, rgba(180,170,58,0.08) 0%, rgba(180,252,69,0) 100%);
 background: radial-gradient(circle, rgba(180,170,58,0.08) 0%, rgba(180,252,69,0) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b4aa3a",endColorstr="#b4fc45",GradientType=1);
-@apply transition-colors duration-500 ease-in-out;
+
+/* darkmode transition  */
+/* @apply transition-colors duration-100 ease-in-out; */ 
+
 
 }
 .homemade-apple-regular {
@@ -204,10 +207,13 @@ span.span:hover + img#arrow {
   width: 0;
 }
 
-.app.dark {
-  /* background-color: #15202b; */
-  /* background-color: #22303c; */
-  background-color: #0f172a;
-  
-  color: #ffffff;
+/* Dark mode styles */
+.dark {
+  --bg-body: #0f172a; /* Dark mode background color */
+  --text-body : white;
+}
+
+.dark body {
+  background-color: var(--bg-body);
+  color:var(--text-body) ;
 }
