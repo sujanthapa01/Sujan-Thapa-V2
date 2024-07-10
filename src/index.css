@@ -13,11 +13,11 @@ body{
     background: radial-gradient(circle, rgba(131,58,180,0.06206232492997199) 0%, rgba(180,252,69,0) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#833ab4",endColorstr="#b4fc45",GradientType=1); */
     
-    background: rgb(180,170,58);
+    /* background: rgb(180,170,58);
 background: -moz-radial-gradient(circle, rgba(180,170,58,0.08) 0%, rgba(180,252,69,0) 100%);
 background: -webkit-radial-gradient(circle, rgba(180,170,58,0.08) 0%, rgba(180,252,69,0) 100%);
 background: radial-gradient(circle, rgba(180,170,58,0.08) 0%, rgba(180,252,69,0) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b4aa3a",endColorstr="#b4fc45",GradientType=1);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b4aa3a",endColorstr="#b4fc45",GradientType=1); */
 
 /* darkmode transition  */
 /* @apply transition-colors duration-100 ease-in-out; */ 

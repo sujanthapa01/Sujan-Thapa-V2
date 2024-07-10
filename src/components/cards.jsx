@@ -10,7 +10,9 @@ function cards() {
         <div style={{ position: "relative" }} className="overflow-hidden  ">
           <img
             src={img3}
-            className="rounded-2xl border-[2px] object-cover   "
+            className="rounded-2xl border-[2px] object-cover"
+            loading="lazy"
+            decoding="async"
             alt=""
             srcSet=""
             style={{ width: "100% ", height: "160px" }}
