@@ -24,6 +24,21 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b4aa3a",endCo
 
 
 }
+
+.h2{
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
 .homemade-apple-regular {
     font-family: "Homemade Apple", cursive;
     font-weight: 400;

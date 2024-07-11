@@ -11,7 +11,6 @@ function Layout() {
         <Navigation />
         <div className='grow overflow-hidden px-6'>
           <div className="w-full h-full max-w-[1072px] mx-auto flex flex-col">
-
           <Outlet />
           </div>
         </div>
