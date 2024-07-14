@@ -46,17 +46,7 @@ function Navigation() {
                   )}
                 </NavLink>
               </li>
-              <li className="py-2 pl-2 pr-2 rounded-xl duration-300   xl:hover:dark:border-slate-800 xl:hover:dark:bg-gradient-to-b xl:hover:dark:from-slate-800 ">
-                <NavLink to="/Projects">
-                  {({ isActive }) => (
-                    <img
-                      className="hover:scale-[2px] duration-200 cursor-pointer h-[28px]"
-                      src={isActive ? Porjectactive : projects}
-                      alt="Projects"
-                    />
-                  )}
-                </NavLink>
-              </li>
+             
               <li className="py-2 pl-2 pr-2 rounded-xl duration-300 xl:hover:dark:border-slate-800 xl:hover:dark:bg-gradient-to-b xl:hover:dark:from-slate-800">
                 <NavLink to="/Aboutme">
                   {({ isActive }) => (
@@ -64,6 +54,17 @@ function Navigation() {
                       className="hover:scale-[2px] duration-200 cursor-pointer h-[28px]"
                       src={isActive ? Abotmeactive : Aboutme}
                       alt="Aboutme"
+                    />
+                  )}
+                </NavLink>
+              </li>
+              <li className="py-2 pl-2 pr-2 rounded-xl duration-300   xl:hover:dark:border-slate-800 xl:hover:dark:bg-gradient-to-b xl:hover:dark:from-slate-800 ">
+                <NavLink to="/Projects">
+                  {({ isActive }) => (
+                    <img
+                      className="hover:scale-[2px] duration-200 cursor-pointer h-[28px]"
+                      src={isActive ? Porjectactive : projects}
+                      alt="Projects"
                     />
                   )}
                 </NavLink>
