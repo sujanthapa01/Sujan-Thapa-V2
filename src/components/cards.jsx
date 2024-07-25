@@ -1,8 +1,12 @@
 import React from "react";
 import Arrow from "../assets/Arrow.png";
 import img3 from "../assets/img3.png";
+import TextColorPicker from "./textColorPicker";
+import { useLocation } from "react-router-dom";
 
 function cards() {
+  const location = useLocation();
+  const isChatPage = location.pathname === '/chat';
   return (
     <>
       <div className="  xl:rotate-0 md:rotate-0 lg:rotate-0 rounded-md  ">
@@ -98,7 +102,7 @@ function cards() {
       </div>
 
 
-
+      {isChatPage && <TextColorPicker/>}
     </>
   );
 }

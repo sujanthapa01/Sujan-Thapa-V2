@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
+// import Dashboard from "./Dashboard";
 import Cards from "../components/cards";
 import Header from "../components/Header";
+
 import { setColorIndex } from "../features/color/colorSlice"; 
 
 const textColors = [
@@ -106,7 +107,7 @@ function Chat() {
           </div>
         </aside>
       </div>
-      <Dashboard />
+      {/* <Dashboard /> */}
     </>
   );
 }
