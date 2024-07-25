@@ -1,0 +1,3 @@
+ <div className="xl:fixed lg:fixed md:fixed static top-[8rem] md:w-[262px] lg:w-[300px] space-y-6">
+        <Cards />
+      </div>  => "for fixed cards"

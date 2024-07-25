@@ -14,7 +14,7 @@ const ProjectComp = ({ maxProjects }) => {
           setRepos(JSON.parse(cachedData));
           setLoading(false);
         } else {
-          const response = await fetch('https://api.github.com/users/sujanthap01/repos');
+          const response = await fetch('https://api.github.com/users/sujanthapa01/repos');
           if (!response.ok) {
             throw new Error('Failed to fetch data');
           }
