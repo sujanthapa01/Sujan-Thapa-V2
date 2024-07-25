@@ -23,7 +23,7 @@ function Chat({ userId }) { // Pass the user ID as a prop
     if (newMessage.trim() === '') return;
     const colorIndex = userColors[userId] || 0;
     setMessages([...messages,
-      { userId, username: "you", message: newMessage, timestamp: new Date(), colorIndex }
+    { userId, username: "you", message: newMessage, timestamp: new Date(), colorIndex }
     ]);
     setNewMessage("");
   }
@@ -42,27 +42,30 @@ function Chat({ userId }) { // Pass the user ID as a prop
   return (
     <>
       <Header />
-      <div className='grow md:flex space-y-8 md:space-y-0 md:space-x-8 pt-12 md:pt-16 pb-16 md:pb-20'>
+      <div className='grow md:flex space-y-8 md:space-y-0 md:space-x-8 pt-[1.5rem] md:pt-[1.5rem] lg-pt-[4rem] xl:pt-[4rem]  pb-16 md:pb-20'>
         <div className='grow'>
           <div className='min-w-[200px] md:min-w-0'>
             <section className="pl-4 pr-4 rounded-lg border-[1px] border-gray-300 dark:border-slate-800 dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30">
-              <h3 className="font-bold text-[2rem] md:text-[2.5rem] lg:text-[2.5rem] xl:text-[2.5rem] mb-4 text-center">
+              <h3 className="font-bold text-gray-700 text-g text-[2rem] md:text-[2.5rem] lg:text-[2.5rem] xl:text-[2.5rem] mb-4 text-center border-b-[1px]  w-full border-gray-300 dark:border-slate-800">
                 Welcome to guest
               </h3>
               <div>
-                <div className="chat-bg h-[40rem]">
+                <div className=" flex flex-col gap-y-2 h-[28rem] max-w-[700px]  break-words whitespace-normal md:h-[35rem] lg:h-[40rem] xl:h-[40rem] 2xl:h-[40rem] ">
                   {messages.map((msg, index) => {
                     const colors = textColors[msg.colorIndex] || { textColor: "text-blue-400", bgColor: "bg-blue-300" };
 
                     return (
-                      <div key={index} className="flex gap-2 dark:text-white">
+                      <div key={index} className="flex gap-2 dark:text-white  ">
                         <h3
                           className={`font-bold ${colors.textColor} inline-flex relative duration-200 cursor-pointer before:absolute before:inset-0 before:${colors.bgColor} before:opacity-30 before:-z-10 hover:before:-rotate-0 before:-rotate-3 before:translate-y-1/4 before:h-4`}
                         >
                           {msg.username}
                         </h3>
-                        : <span>{msg.message}</span>
+                        : <div className='flex justify-between w-full '>
+                        <span className='text-slate-600 dark:text-slate-400  message-bg'>{msg.message}</span>
                         <span><span className="text-gray-500 ml-2 text-end">{formatTimestamp(msg.timestamp)}</span></span>
+
+                        </div>
                       </div>
                     );
                   })}
@@ -90,19 +93,19 @@ function Chat({ userId }) { // Pass the user ID as a prop
                       onKeyDown={handleKeyDown}
                     />
                     <button id="sendButton" onClick={handleMessage}>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 664 663">
-      <path
-        fill="none"
-        d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
-      ></path>
-      <path
-        stroke-linejoin="round"
-        stroke-linecap="round"
-        stroke-width="33.67"
-        stroke="#6c6c6c"
-        d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
-      ></path>
-    </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 664 663">
+                        <path
+                          fill="none"
+                          d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
+                        ></path>
+                        <path
+                          stroke-linejoin="round"
+                          stroke-linecap="round"
+                          stroke-width="33.67"
+                          stroke="#6c6c6c"
+                          d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
+                        ></path>
+                      </svg>
                     </button>
                   </div>
                 </div>

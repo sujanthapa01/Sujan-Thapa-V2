@@ -8,11 +8,11 @@ function Aboutme() {
 
     <>   
     <Header  />
-     <div className='grow md:flex space-y-8 md:space-y-0 md:space-x-8 pt-12 md:pt-16 pb-16 md:pb-20'>
+     <div className='grow md:flex space-y-8 md:space-y-0 md:space-x-8 pt-[1.5rem] md:pt-[1.5rem] lg-pt-[4rem] xl:pt-[4rem] pb-16 md:pb-20'>
       <div className='grow'>
         <div className='min-w-[200px] md:min-w-0'>
           <section>
-            <h1 className='text-[2rem] md:text-[3rem] lg:text-[3rem] xl:text-[3rem] leading-[50px] mt-2 mb-8'>
+            <h1 className='text-[2rem] md:text-[3rem] lg:text-[3rem] xl:text-[3rem] leading-[50px] mb-8'>
               <strong>Hii. I'm <span className='text-blue-500 inline-flex relative duration-200 cursor-pointer before:absolute before:inset-0 before:bg-blue-300 before:opacity-30 before:-z-10 hover:before:-rotate-0 before:-rotate-3 before:translate-y-1/4'>Sujan Thapa </span> 🎸</strong>
             </h1>
 

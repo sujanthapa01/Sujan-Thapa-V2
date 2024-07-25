@@ -309,7 +309,7 @@ span.span:hover + img#arrow {
   transition: all 0.3s;
 }
 #messageInput {
-  width: 250px;
+  width: 100%;
   height: 100%;
   background-color: transparent;
   outline: none;
@@ -360,6 +360,15 @@ span.span:hover + img#arrow {
     color: white;
   }
 }
+@media (min-width: 640px) {  #messageInput {
+  width: 240px;
+  height: 80%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding-left: 10px;
+  color: white;
+}}
 
 @media not all and (max-width: 1280px) {  #messageInput {
   width: 400px;
@@ -370,3 +379,10 @@ span.span:hover + img#arrow {
   padding-left: 10px;
   color: white;
 } }
+
+
+.message-bg{
+  background-color: #a7bcee2d;
+  border-radius: 4px;
+  padding: 4px;
+}
