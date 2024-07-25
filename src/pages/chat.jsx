@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-
+import { useSelector } from 'react-redux';
+// import Dashboard from "./Dashboard";
 import Cards from "../components/cards";
 import Header from "../components/Header";
-import { setColorIndex } from "../features/color/colorSlice"; 
 
 const textColors = [
   { textColor: "text-yellow-400", bgColor: "bg-yellow-300" },
@@ -11,21 +10,20 @@ const textColors = [
   { textColor: "text-green-400", bgColor: "bg-green-300" }
 ];
 
-function Chat() {
-  const dispatch = useDispatch();
-  const colorIndex = useSelector((state) => state.color.colorIndex);
-  const colors = textColors[colorIndex] || { textColor: "text-blue-400", bgColor: "bg-blue-300" };
+function Chat({ userId }) { // Pass the user ID as a prop
+  const userColors = useSelector((state) => state.color.userColors);
 
-  const [message, setMessage] = useState([
-    { username: "Eshika", message: "Hii im eshika" },
-    { username: "Reshika", message: "Hii I'm Reshika" }
+  const [messages, setMessages] = useState([
+    { userId: "1", username: "Eshika", message: "Hii im eshika", timestamp: new Date() },
+    { userId: "4", username: "Reshika", message: "Hii I'm Reshika", timestamp: new Date() }
   ]);
   const [newMessage, setNewMessage] = useState("");
 
   function handleMessage() {
     if (newMessage.trim() === '') return;
-    setMessage([...message,
-      { username: "you", message: newMessage, timestamp: new Date(), }
+    const colorIndex = userColors[userId] || 0;
+    setMessages([...messages,
+      { userId, username: "you", message: newMessage, timestamp: new Date(), colorIndex }
     ]);
     setNewMessage("");
   }
@@ -38,7 +36,6 @@ function Chat() {
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       handleMessage();
-      console.log("Enter key pressed");
     }
   };
 
@@ -54,17 +51,21 @@ function Chat() {
               </h3>
               <div>
                 <div className="chat-bg h-[40rem]">
-                  {message.map((msg, index) => (
-                    <div key={index} className="flex gap-2 dark:text-white">
-                      <h3
-                        className={`font-bold ${colors.textColor} inline-flex relative duration-200 cursor-pointer before:absolute before:inset-0 before:${colors.bgColor} before:opacity-30 before:-z-10 hover:before:-rotate-0 before:-rotate-3 before:translate-y-1/4 before:h-4`}
-                      >
-                        {msg.username}
-                      </h3>
-                      : <span>{msg.message}</span>
-                      <span><span className="text-gray-500 ml-2 text-end">{formatTimestamp(msg.timestamp)}</span></span>
-                    </div>
-                  ))}
+                  {messages.map((msg, index) => {
+                    const colors = textColors[msg.colorIndex] || { textColor: "text-blue-400", bgColor: "bg-blue-300" };
+
+                    return (
+                      <div key={index} className="flex gap-2 dark:text-white">
+                        <h3
+                          className={`font-bold ${colors.textColor} inline-flex relative duration-200 cursor-pointer before:absolute before:inset-0 before:${colors.bgColor} before:opacity-30 before:-z-10 hover:before:-rotate-0 before:-rotate-3 before:translate-y-1/4 before:h-4`}
+                        >
+                          {msg.username}
+                        </h3>
+                        : <span>{msg.message}</span>
+                        <span><span className="text-gray-500 ml-2 text-end">{formatTimestamp(msg.timestamp)}</span></span>
+                      </div>
+                    );
+                  })}
                 </div>
                 <div className="flex justify-center w-full mt-4 mb-4">
                   <div className="messageBox">
@@ -89,10 +90,19 @@ function Chat() {
                       onKeyDown={handleKeyDown}
                     />
                     <button id="sendButton" onClick={handleMessage}>
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 664 663">
-                        <path fill="none" d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"></path>
-                        <path strokeLinejoin="round" strokeLinecap="round" strokeWidth="33.67" stroke="#6c6c6c" d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"></path>
-                      </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 664 663">
+      <path
+        fill="none"
+        d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
+      ></path>
+      <path
+        stroke-linejoin="round"
+        stroke-linecap="round"
+        stroke-width="33.67"
+        stroke="#6c6c6c"
+        d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
+      ></path>
+    </svg>
                     </button>
                   </div>
                 </div>
@@ -106,7 +116,6 @@ function Chat() {
           </div>
         </aside>
       </div>
-      <Dashboard />
     </>
   );
 }

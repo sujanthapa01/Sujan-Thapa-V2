@@ -1,18 +1,21 @@
+// features/color/colorSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  colorIndex: 0,
+  userColors: {} // Store colors by user ID
 };
 
 const colorSlice = createSlice({
   name: 'color',
   initialState,
   reducers: {
-    setColorIndex: (state, action) => {
-      state.colorIndex = action.payload;
-    },
-  },
+    setColorForUser: (state, action) => {
+      const { userId, colorIndex } = action.payload;
+      state.userColors[userId] = colorIndex;
+    }
+  }
 });
 
-export const { setColorIndex } = colorSlice.actions;
+export const { setColorForUser } = colorSlice.actions;
+
 export default colorSlice.reducer;
