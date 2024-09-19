@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import useResetpassword from '../../Hooks/useResetpassword';
+// import useResetpassword from '../../Hooks/useResetpassword';
 
 export default function forgetPassword() {
 

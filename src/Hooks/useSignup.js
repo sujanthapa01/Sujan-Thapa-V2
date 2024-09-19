@@ -1,38 +1,28 @@
-import { useDispatch, useSelector } from "react-redux";
-import { signup, clearError, clearSuccess } from '../features/SignupAuth/SignupSlice';
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useState } from 'react';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 
-export const useSignup = () => {
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-    const { error, success, loading } = useSelector(state => state.signupAuth); // Corrected useSelector
+export default function useSignup() {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
 
-    const handleSignup = (username, email, password) => {
-        dispatch(signup({ username, email, password })).then((response) => {
-            if (response.meta.requestStatus === 'fulfilled') { // Corrected 'fullfilled' to 'fulfilled'
-                navigate('/signin');
-            }
-        });
-    };
+  const handleSignup = async (username, email, password) => {
+    setLoading(true);
+    setError(null);
+    setSuccess(null);
 
-    useEffect(() => {
-        if (error) {
-            setTimeout(() => {
-                dispatch(clearError());
-            }, 5000);
-        }
-    }, [error, dispatch]);
+    const auth = getAuth();
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      setSuccess('Signup successful!');
+      localStorage.setItem('user', JSON.stringify(user));
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    useEffect(() => {
-        if (success) {
-            setTimeout(() => {
-                dispatch(clearSuccess());
-            }, 2000);
-        }
-    }, [success, dispatch]);
-
-    return { handleSignup, error, success, loading };
-};
-
-export default useSignup;
+  return { handleSignup, error, success, loading };
+}
