@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { getAuth, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword } from "firebase/auth";
-import useSignup from "../../Hooks/useSignup"; // Hook to handle signup logic
+import { getAuth, GoogleAuthProvider, signInWithRedirect, createUserWithEmailAndPassword } from "firebase/auth";
+import useSignup from "../../Hooks/useSignup";
+import GoogleButton from "../../components/googleButton/button";
+import GoogleIcon from "../../assets/SVG/googleicon.svg"
 
 export default function SignUp() {
   const [showPass, setShowPass] = useState(false);
@@ -32,25 +34,17 @@ export default function SignUp() {
       alert("All fields are required.");
       return false;
     }
-    // Add more validation logic here if needed
     return true;
   };
 
-  // Google sign-in handler
+  // Google sign-in handler with redirect instead of popup
   const handleGoogleSignIn = async () => {
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
-    
+
     try {
-      const result = await signInWithPopup(auth, provider);
-      // This gives you a Google Access Token. You can use it to access Google APIs.
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential?.accessToken;
-      // The signed-in user info.
-      const user = result.user;
-      console.log("User Info: ", user);
-      console.log("Token: ", token);
-      // Optionally, handle storing user information or redirecting the user
+      // Use signInWithRedirect instead of signInWithPopup
+      await signInWithRedirect(auth, provider);
     } catch (error) {
       console.error("Google Sign-In Error: ", error.message);
     }
@@ -58,7 +52,7 @@ export default function SignUp() {
 
   return (
     <main className="flex justify-center h-screen items-center">
-      <div className="wrapper dark:border-slate-800 dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30 flex items-center flex-col w-full md:w-96 lg:w-96 xl:w-96 h-auto justify-center p-4 bg-transparent backdrop-blur-sm border rounded-md">
+      <div className="wrapper dark:border-slate-800 dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30 flex items-center flex-col w-full md:w-96 lg:w-96 xl:w-96 h-auto justify-center p-4 bg-transparent backdrop-blur-sm lg:border md:border xl:border rounded-md">
         <div className="w-full pl-4 pt-4 hidden md:block">
           <Link to="/">
             <svg fill="#000000" width="20" height="20" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
@@ -69,7 +63,7 @@ export default function SignUp() {
         <h1 className="uppercase text-xl font-semibold mb-4">Create Account</h1>
         <div className="flex flex-col gap-4 items-center">
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 items-center">
-            <div className="flex flex-col gap-2 w-80">
+            <div className="flex flex-col gap-2 w-60">
               <input
                 type="text"
                 placeholder="Full name"
@@ -104,13 +98,20 @@ export default function SignUp() {
             >
               {loading ? "Signing Up..." : "Sign Up"}
             </button>
+            <div className="text-slate-400">
+              or
+            </div>
           </form>
-          <button
+
+          <GoogleButton
             onClick={handleGoogleSignIn}
-            className="border-blue-200 border w-24 bg-red-500 pl-2 pr-2 pt-1 pb-1 rounded-full hover:bg-red-400 duration-100 text-white mt-4"
-          >
-            Sign Up with Google
-          </button>
+            text="SignUp With Google"
+            img={GoogleIcon}
+            className={'bg-white flex items-center justify-center border-2 px-4 rounded-full text-slate-400'}
+            imgClass={'h-8 w-8'}
+
+          />
+
           <div className="h-7 p-1">
             {error && <p className="text-red-500">{error}</p>}
             {success && <p className="text-green-500">{success}</p>}

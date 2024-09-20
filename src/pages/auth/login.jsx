@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider, signInWithRedirect } from 'firebase/auth';
 import useLogin from '../../Hooks/useLogin';
+import GoogleButton from '../../components/googleButton/button';
+import GoogleIcon from "../../assets/SVG/googleicon.svg"
 
 export default function Signin() {
   const [showPass, setShowPass] = useState(false);
@@ -28,10 +30,7 @@ export default function Signin() {
     const provider = new GoogleAuthProvider();
 
     try {
-      const result = await signInWithPopup(auth, provider);
-      const user = result.user;
-      console.log('User Info:', user);
-      // Optionally, handle storing user information or redirecting the user
+      await signInWithRedirect(auth, provider);
     } catch (error) {
       console.error("Google Sign-In Error:", error.message);
     }
@@ -39,7 +38,7 @@ export default function Signin() {
 
   return (
     <main className="flex justify-center h-screen items-center">
-      <div className="wrapper dark:border-slate-800 dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30 flex items-center flex-col w-full md:w-96 lg:w-96 xl:w-96 h-auto justify-center p-4 bg-transparent backdrop-blur-sm border rounded-md">
+      <div className="wrapper dark:border-slate-800 dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30 flex items-center flex-col w-full md:w-96 lg:w-96 xl:w-96 h-auto justify-center p-4 bg-transparent backdrop-blur-sm lg:border md:border xl:border rounded-md">
         <div className='justify-start w-full pl-4 pt-4 items-center hidden md:block lg:block xl:block'>
           <Link to="/">
             <svg fill="#000000" width="20px" height="20px" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +48,7 @@ export default function Signin() {
         </div>
         <h1 className="uppercase text-xl font-semibold mb-4">Login</h1>
         <form onSubmit={onSubmit} className="flex flex-col gap-4 items-center">
-          <div className="flex flex-col gap-2 w-80">
+          <div className="flex flex-col gap-2 w-60">
             <input
               maxLength="26"
               type="text"
@@ -86,14 +85,20 @@ export default function Signin() {
             >
               Login
             </button>
+
+            
           )}
-          <button
-            type="button"
+           <div className="text-slate-400">
+              or
+            </div>
+            <GoogleButton
             onClick={handleGoogleSignIn}
-            className="border-blue-200 border w-24 bg-red-500 pl-2 pr-2 pt-1 pb-1 rounded-full hover:bg-red-400 duration-100 text-white mt-4"
-          >
-            Sign in with Google
-          </button>
+            text="SignUp With Google"
+            img={GoogleIcon}
+            className={'bg-white flex items-center justify-center border-2 px-4 rounded-full text-slate-400'}
+            imgClass={'h-8 w-8'}
+
+          />
           <div className='h-7 p-1'>
             {error && <p className="text-red-500 h-1 pb-4">{error}</p>}
             {success && <p className="text-green-500 h-1 pb-4">{success}</p>}
