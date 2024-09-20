@@ -107,7 +107,7 @@ export default function SignUp() {
             onClick={handleGoogleSignIn}
             text="SignUp With Google"
             img={GoogleIcon}
-            className={'bg-white flex items-center justify-center border-2 px-4 rounded-full text-slate-400'}
+            className={'bg-white flex items-center justify-center border-2 px-4 rounded-full text-slate-400 cursor-pointer hover:bg-slate-100'}
             imgClass={'h-8 w-8'}
 
           />
