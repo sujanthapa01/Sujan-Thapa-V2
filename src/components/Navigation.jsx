@@ -1,6 +1,4 @@
-import React from "react";
 import { NavLink} from "react-router-dom";
-
 import activeHome from "../assets/active-home.png";
 import home from "../assets/Home-icon.png";
 import projects from "../assets/Projects-icon.png";
@@ -65,17 +63,6 @@ function Navigation() {
                       className="hover:scale-[2px] duration-200 cursor-pointer h-[28px]"
                       src={isActive ? Porjectactive : projects}
                       alt="Projects"
-                    />
-                  )}
-                </NavLink>
-              </li>
-              <li className="py-2 pl-2 pr-2 rounded-xl duration-300 xl:hover:dark:border-slate-800 xl:hover:dark:bg-gradient-to-b xl:hover:dark:from-slate-800">
-                <NavLink to="/chat">
-                  {({ isActive }) => (
-                    <img
-                      className="hover:scale-[2px] duration-200 cursor-pointer h-[28px]"
-                      src={isActive ? Chatactive : Chat}
-                      alt="chat"
                     />
                   )}
                 </NavLink>

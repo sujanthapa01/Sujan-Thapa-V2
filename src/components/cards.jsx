@@ -1,12 +1,6 @@
-import React from "react";
 import Arrow from "../assets/Arrow.png";
 import img3 from "../assets/img3.png";
-
-import { useLocation } from "react-router-dom";
-
 function cards() {
-  const location = useLocation();
-  const isChatPage = location.pathname === '/chat';
   return (
     <>
       <div className="  xl:rotate-0 md:rotate-0 lg:rotate-0 rounded-md  ">
@@ -60,7 +54,7 @@ function cards() {
                   visiting my site!
                 </span>
                 <p className="font-aspekta font-[650] mb-1">
-                  It's a pleasure
+                  {"It's a pleasure"}
                 </p>
               </div>
               <div className="mt-4">

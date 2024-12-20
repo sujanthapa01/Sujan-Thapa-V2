@@ -1,5 +1,3 @@
-// Projects.js
-import React from "react";
 import Header from "../components/Header";
 import Cards from "../components/cards";
 import ProjectComp from "../components/projectComp";

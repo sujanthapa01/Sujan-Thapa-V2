@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
@@ -20,8 +21,8 @@ const ProjectComp = ({ maxProjects }) => {
           }
           const json = await response.json();
           setRepos(json);
-          setLoading(false);
           localStorage.setItem('githubRepos', JSON.stringify(json));
+          setLoading(false);
         }
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -37,11 +38,11 @@ const ProjectComp = ({ maxProjects }) => {
   return (
     <div>
       {loading ? (
-        <div className="grid sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-5  dark:border-slate-800 hover:border-blue-300  dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30">
+        <div className="grid sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-5">
           {Array.from({ length: maxProjects }, (_, index) => (
             <div
               key={index}
-              className="rounded-lg bg-transparent border border-slate-200 dark:border-slate-800 hover:border-blue-300  dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30 odd:-rotate-1 even:rotate-1 hover:rotate-0 transition-transform duration-700 hover:duration-100 ease-in-out p-5"
+              className="rounded-lg bg-transparent border border-slate-200 dark:border-slate-800 hover:border-blue-300 dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30 odd:-rotate-1 even:rotate-1 hover:rotate-0 transition-transform duration-700 hover:duration-100 ease-in-out p-5"
             >
               <Skeleton height={40} width={40} circle={true} />
               <Skeleton height={30} width="20rem" style={{ marginBottom: '1rem' }} />
@@ -89,6 +90,10 @@ const ProjectComp = ({ maxProjects }) => {
       )}
     </div>
   );
+};
+
+ProjectComp.propTypes = {
+  maxProjects: PropTypes.number.isRequired, 
 };
 
 export default ProjectComp;

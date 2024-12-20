@@ -1,5 +1,3 @@
-import React from 'react';
-
 import ThemeToggle from './themeToggleButton/themeToggle'; // Ensure this path is correct
 import { useSelector } from 'react-redux';
 

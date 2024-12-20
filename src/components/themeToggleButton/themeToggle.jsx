@@ -1,8 +1,7 @@
-import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toogleTheme } from '../../features/Theme/themeSlice';
 
-function themeTogglel() {
+function ThemeToggle() {
   const theme = useSelector((state) => state.theme.theme);
   const dispatch = useDispatch();
 
@@ -33,4 +32,4 @@ function themeTogglel() {
   );
 }
 
-export default themeTogglel;
+export default ThemeToggle;

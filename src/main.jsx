@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home, PageNotFound, Projects, AboutMe, Layout} from "./index";

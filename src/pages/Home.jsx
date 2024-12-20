@@ -1,5 +1,3 @@
-// Home.js
-import React from "react";
 import img2 from "../assets/img2.png";
 import github from "../assets/Github.png";
 import instagram from "../assets/instagram.png";
@@ -18,23 +16,22 @@ function Home() {
       <Header />
       <section>
         <div className="max-w-[700px] ">
-          {/* Your existing content */}
           <div className="pt-8 pb-10">
             <p className="text-sm text-gray-500 pt-2 pb-2 text-center sig-text hidden xl:block md:block lg:block">
               @sujanthapa 2024
             </p>
 
-            <div className="h-[12rem]  xl:w-full overflow-hidden rounded-xl ">
+            <div className="h-[12rem]  xl:w-full overflow-hidden rounded-xl cursor-pointer ">
               <img
                 className=" object-cover rounded-md hover:scale-[1.1] -translate-y-[20px] duration-200 "
                 src={img2}
                 loading="lazy"
                 decoding="async"
-                alt=""
+                alt="banner"
               />
             </div>
             <p className="text-xl mt-6">
-              Hi, I'm{" "}
+             {" Hi, I'm"}{" "}
               <span className="text-blue-500 inline-flex relative duration-200 cursor-pointer before:absolute before:inset-0 before:bg-yellow-300 before:opacity-30 before:-z-10 before:-rotate-3 before:translate-y-1/4 hover:before:rotate-0 dark:before:bg-blue-400">
                 Sujan Thapa
               </span>
@@ -48,8 +45,7 @@ function Home() {
               </strong>
             </h1>
             <p className="text-lg xl:text-xl text-gray-500 mt-4 dark:text-slate-400">
-              Passionate full-stack student 🧑‍🎓 crafting seamless digital
-              experiences. Outside the code, I'm a music enthusiast{" "}
+            {"  Passionate full-stack student 🧑‍🎓 crafting seamless digital experiences. Outside the code, I'm a music enthusiast"}{" "}
             </p>
           </div>
         </div>
@@ -91,9 +87,7 @@ function Home() {
                 </a>
               </li>
               <p className="text-gray-700 mt-8 text-lg xl:text-[1.2rem] dark:text-slate-300">
-                I'm a full-stack student learning about data and algorithms in
-                C++. I also enjoy music and exploring the internet. I'm passionate
-                about software engineering and eager to learn and create.
+             {"   I'm a full-stack student learning about data and algorithms in C++. I also enjoy music and exploring the internet. I'm passion about software engineering and eager to learn and create."}
               </p>
             </div>
           </div>
