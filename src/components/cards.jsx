@@ -1,7 +1,7 @@
 import React from "react";
 import Arrow from "../assets/Arrow.png";
 import img3 from "../assets/img3.png";
-import TextColorPicker from "./textColorPicker";
+
 import { useLocation } from "react-router-dom";
 
 function cards() {
@@ -102,8 +102,7 @@ function cards() {
       </div>
 
 
-      {isChatPage && <TextColorPicker/>}
-    </>
+     </>
   );
 }
 
