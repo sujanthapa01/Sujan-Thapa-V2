@@ -5,8 +5,7 @@ import projects from "../assets/Projects-icon.png";
 import Abotmeactive from "../assets/Aboutme-active.png";
 import Porjectactive from "../assets/Project-active.png";
 import Aboutme from "../assets/Aboutme-icon.png";
-import Chat from "../assets/chat.png";
-import Chatactive from "../assets/chat-active.png";
+import { useLocation} from "react-router-dom";
 import myimg from "../assets/myimg.jpeg";
 
 function Navigation() {
@@ -19,6 +18,13 @@ function Navigation() {
   //   setActive(pathSegment || 'home');
   // }, [pathname]);
 
+  const location = useLocation();
+  const handleScrollToTop = () => {
+  if(location.pathname ==="/"){
+    window.scrollTo({top:0, behavior:"smooth"})
+  }
+  }
+
   return (
     <div className="fixed w-full md:sticky bottom-0 md:top-0 h-16 md:w-24 shrink-0 md:h-screen overflow-x-hidden no-scrollbar border-r dark:border-slate-800 z-50 backdrop-filter backdrop-blur-lg">
       <div className="h-full w-full flex flex-row md:flex-col justify-ce items-center after:flex-1 after:mt-auto">
@@ -26,7 +32,7 @@ function Navigation() {
           <div className="flex justify-center my-4 tooltip-container">
             <span className="tooltip rounded-md">@SujanThapa</span>
             <NavLink to="/">
-              <img src={myimg} height='32' width='32' className="rounded-full" data-tip="sujanthapa" alt="" />
+              <img src={myimg} height='32' width='32' className="rounded-full" data-tip="sujanthapa" alt="" onClick={handleScrollToTop} />
             </NavLink>
           </div>
         </div>
