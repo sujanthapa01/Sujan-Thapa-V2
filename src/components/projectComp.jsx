@@ -78,7 +78,7 @@ const ProjectComp = ({ maxProjects }) => {
                   </div>
                 </div>
                 <h1 className="text-lg font-aspekta font-[650] mb-1">{repo.name}</h1>
-                <p clorder-blackassName="text-sm text-slate-500 dark:text-slate-400 mb-2">{repo.description}</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400 mb-2">{repo.description}</p>
                 <div className="flex gap-2 mt-4">
   {repo.language && (
     <div>
