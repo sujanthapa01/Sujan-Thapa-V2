@@ -7,9 +7,21 @@ import Cards from "../components/cards";
 import Header from "../components/Header";
 import ProjectComp from "../components/projectComp";
 import { Link } from "react-router-dom";
+import content from "@/data/home.json"
 
 function Home() {
+  const currentDate = new Date();
 
+  const SocialIcon = ({ link, icon, alt }) => {
+    return (
+      <a href={link} target="blank">
+        <img
+          className="h-[38px] hover:scale-[1.2] duration-200 cursor-pointer"
+          src={icon}
+          alt={alt}
+        />
+      </a>)
+  }
 
 
   return (
@@ -19,12 +31,12 @@ function Home() {
         <div className="max-w-[700px] ">
           <div className="pt-8 pb-10">
             <p className="text-sm text-gray-500 pt-2 pb-2 text-center sig-text hidden xl:block md:block lg:block">
-              @sujanthapa 2024
+              @{content.name_letters} {currentDate.getFullYear()}
             </p>
 
             <div className="h-[12rem]  xl:w-full overflow-hidden rounded-xl cursor-pointer ">
               <img
-                className=" object-cover rounded-md hover:scale-[1.1] -translate-y-[20px] duration-200 "
+                className=" ob Sujan Thapaject-cover rounded-md hover:scale-[1.1] -translate-y-[20px] duration-200 "
                 src={img2}
                 loading="lazy"
                 decoding="async"
@@ -32,21 +44,21 @@ function Home() {
               />
             </div>
             <p className="text-xl mt-6">
-             {" Hi, I'm"}{" "}
+              {" Hi, I'm"}{" "}
               <span className="text-blue-500 inline-flex relative duration-200 cursor-pointer before:absolute before:inset-0 before:bg-yellow-300 before:opacity-30 before:-z-10 before:-rotate-3 before:translate-y-1/4 hover:before:rotate-0 dark:before:bg-blue-400">
-                Sujan Thapa
+                {content.name}
               </span>
 
             </p>
             <h1 className="text-[2.25rem] xl:text-[3rem] leading-[50px] mt-2">
               <strong>
                 I engineer <span className="text-green-500 "> end-to-end </span>
-                solutions that users{" "} 
+                solutions that users{" "}
                 <span className="text-pink-400"> love</span>
               </strong>
             </h1>
             <p className="text-lg xl:text-xl text-gray-500 mt-4 dark:text-slate-400">
-            {"  Passionate full-stack student 🧑‍🎓 crafting seamless digital experiences. Outside the code, I'm a music enthusiast"}{" "}
+              {content.bio}
             </p>
           </div>
         </div>
@@ -56,39 +68,17 @@ function Home() {
           <div className="max-w-[700px] ">
             <div className="space-y-10 ">
               <li className="flex flex-wrap gap-10 mt-[37px] text-slate-500 dark:text-slate-400">
-                <a href="https://github.com/sujanthapa01" target="blank">
-                  <img
-                    className="h-[38px] hover:scale-[1.2] duration-200 cursor-pointer"
-                    src={github}
-                    alt=""
-                  />
-                </a>
-                <a href="" target="blank">
-                  <img
-                    className="h-[38px] hover:scale-[1.2] duration-200 cursor-pointer"
-                    src={instagram}
-                    alt=""
-                  />
-                </a>
-                <a href="mailto:sujanthapast0@gmail.com" target="blank">
-                  {" "}
-                  <img
-                    className="h-[38px] hover:scale-[1.2] duration-200 cursor-pointer"
-                    src={mail}
-
-                  />
-                </a>
-                <a href="" target="blank">
-                  {" "}
-                  <img
-                    className="h-[38px] hover:scale-[1.2] duration-200 cursor-pointer"
-                    src={spotify}
-                    alt=""
-                  />
-                </a>
+                {/* github */}
+                <SocialIcon link={content.socialLinks.github} icon={github} alt={"github"} />
+                {/* instagram */}
+                <SocialIcon link={content.socialLinks.instagram} icon={instagram} alt={instagram} />
+                {/* email */}
+                <SocialIcon link={content.socialLinks.email} icon={mail} alt={"email"}/>
+                {/* spotify */}
+                <SocialIcon link={content.socialLinks.spotify} icon={spotify} alt={"spotify"}/>
               </li>
               <p className="text-gray-700 mt-8 text-lg xl:text-[1.2rem] dark:text-slate-300">
-             {"   I'm a full-stack student learning about data and algorithms in C++. I also enjoy music and exploring the internet. I'm passion about software engineering and eager to learn and create."}
+                {"   I'm a full-stack student learning about data and algorithms in C++. I also enjoy music and exploring the internet. I'm passion about software engineering and eager to learn and create."}
               </p>
             </div>
           </div>
