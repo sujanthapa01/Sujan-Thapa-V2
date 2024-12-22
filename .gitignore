@@ -1,3 +1,5 @@
+# Excluded files
+/server
 # Logs
 logs
 *.log

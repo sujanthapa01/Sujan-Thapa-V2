@@ -1,40 +1,12 @@
-import { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import useFetchGithubRepos from '@/lib/githubApi/github';
+import { handleLanguageBadgeColor } from '@/helpers/languagebadgeui';
+import ProjectCard from './projectCard';
 import Skeleton from 'react-loading-skeleton';
-import 'react-loading-skeleton/dist/skeleton.css';
-import { Badge } from "@/components/ui/badge"
 
 const ProjectComp = ({ maxProjects }) => {
-  const [repos, setRepos] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const cachedData = localStorage.getItem('githubRepos');
-        if (cachedData) {
-          setRepos(JSON.parse(cachedData));
-          setLoading(false);
-        } else {
-          const response = await fetch('https://api.github.com/users/sujanthapa01/repos');
-          if (!response.ok) {
-            throw new Error('Failed to fetch data');
-          }
-          const json = await response.json();
-          setRepos(json);
-          localStorage.setItem('githubRepos', JSON.stringify(json));
-          setLoading(false);
-        }
-      } catch (error) {
-        console.error('Error fetching data:', error);
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
-
+  const { repos, loading } = useFetchGithubRepos("sujanthapa01");
   const limitedProjects = repos.slice(0, maxProjects);
+  const { badgeColor } = handleLanguageBadgeColor();
 
   return (
     <div>
@@ -45,76 +17,26 @@ const ProjectComp = ({ maxProjects }) => {
               key={index}
               className="rounded-lg bg-transparent border border-slate-200 dark:border-slate-800 hover:border-blue-300 dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30 odd:-rotate-1 even:rotate-1 hover:rotate-0 transition-transform duration-700 hover:duration-100 ease-in-out p-5"
             >
-              <Skeleton height={40} width={40} circle={true} />
-              <Skeleton height={30} width="20rem" style={{ marginBottom: '1rem' }} />
-              <Skeleton height={20} count={3} style={{ marginBottom: '0.5rem' }} />
+              <Skeleton circle={true} height={40} width={40} />
+              <Skeleton height={20} width="60%" className="my-3" />
+              <Skeleton count={2} height={20} />
             </div>
           ))}
         </div>
       ) : (
         <div className="grid sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-5">
-          {limitedProjects.map((repo) => (
-            <a
-              key={repo.id}
-              href={repo.html_url}
-              className="rounded-lg border border-slate-200 dark:border-slate-800  dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30 odd:-rotate-1 even:rotate-1 hover:rotate-0 transition-transform duration-700 hover:duration-100 ease-in-out p-5"
-            >
-              <div className="flex flex-col h-full">
-                <div className="">
-                  <div className="flex items-center justify-between">
-                    <div className="h-10 w-10 flex items-center justify-center border border-slate-200 dark:border-slate-700 rounded-full mb-2">
-                      <img
-                        alt={repo.name}
-                        loading="lazy"
-                        width="48"
-                        height="48"
-                        decoding="async"
-                        data-nimg="1"
-                        className="rounded-full"
-                        src={repo.owner.avatar_url}
-                        style={{ color: 'transparent' }}
-                      />
-                    </div>
-                  </div>
-                </div>
-                <h1 className="text-lg font-aspekta font-[650] mb-1">{repo.name}</h1>
-                <p clorder-blackassName="text-sm text-slate-500 dark:text-slate-400 mb-2">{repo.description}</p>
-                <div className="flex gap-2 mt-4">
-  {repo.language && (
-    <div>
-      <Badge variant="default" className="text-blue-500 font-normal dark:text-black">
-        {repo.language}
-      </Badge>
-    </div>
-  )}
-  {repo.open_issues_count? (
-    <div>
-      <Badge variant="default" className="pr-[4px] text-blue-500 font-normal dark:text-black">
-        <span>Issues</span>
-        <div className="bg-red-500 text-white px-[5px] rounded-full ml-[8px] ">
-          {repo.open_issues_count}
-        </div>
-      </Badge>
-    </div>
-  ) : null}
-</div>
+          {limitedProjects.map((repo) => {
+            const colors = badgeColor[repo.language?.toLowerCase()] || {
+              textColor: "text-gray-500 dark:text-gray-300",
+              bgColor: "bg-gray-100 dark:bg-gray-800",
+            };
 
-              </div>
-              <div className="text-sky-500 flex justify-end">
-                <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="14" height="12">
-                  <path d="M9.586 5 6.293 1.707 7.707.293 13.414 6l-5.707 5.707-1.414-1.414L9.586 7H0V5h9.586Z"></path>
-                </svg>
-              </div>
-            </a>
-          ))}
+            return <ProjectCard key={repo.id} repo={repo} colors={colors} />;
+          })}
         </div>
       )}
     </div>
   );
-};
-
-ProjectComp.propTypes = {
-  maxProjects: PropTypes.number.isRequired,
 };
 
 export default ProjectComp;
