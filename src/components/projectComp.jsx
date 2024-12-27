@@ -39,9 +39,9 @@ const ProjectComp = ({ maxProjects }) => {
     </div>
   );
 };
-ProjectComp.prototype ={
-   maxProjects : PropTypes.number.isRequired
-}
 
+ProjectComp.propTypes = {
+  maxProjects: PropTypes.number.isRequired
+};
 
 export default ProjectComp;
