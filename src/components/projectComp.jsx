@@ -1,13 +1,12 @@
 import useFetchGithubRepos from '@/lib/githubApi/github';
 import { handleLanguageBadgeColor } from '@/helpers/languagebadgeui';
-// import ProjectCard from './projectCard'; 
 import Skeleton from 'react-loading-skeleton';
 import PropTypes from 'prop-types';
 import { Badge } from '@/components/ui/badge';
 import { useMemo } from 'react';
 
 const ProjectComp = ({ maxProjects }) => {
-  const { repos, loading } = useFetchGithubRepos("sujanthapa01");
+  const { repos, loading } = useFetchGithubRepos('sujanthapa01');
   const limitedProjects = useMemo(() => repos.slice(0, maxProjects), [repos, maxProjects]);
   const { badgeColor } = handleLanguageBadgeColor();
 
@@ -34,20 +33,15 @@ const ProjectComp = ({ maxProjects }) => {
         <div className="grid sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-5">
           {limitedProjects.map((repo) => {
             const colors = badgeColor[repo.language?.toLowerCase()] || {
-              textColor: "text-gray-500 dark:text-gray-300",
-              bgColor: "bg-gray-100 dark:bg-gray-800",
+              textColor: 'text-gray-500 dark:text-gray-300',
+              bgColor: 'bg-gray-100 dark:bg-gray-800',
             };
-
             return <ProjectCard key={repo.id} repo={repo} colors={colors} />;
           })}
         </div>
       )}
     </div>
   );
-};
-
-ProjectComp.propTypes = {
-  maxProjects: PropTypes.number.isRequired,
 };
 
 const ProjectCard = ({ repo, colors }) => {
@@ -57,19 +51,17 @@ const ProjectCard = ({ repo, colors }) => {
       className="rounded-lg border flex flex-col border-slate-200 dark:border-slate-800 dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30 odd:-rotate-1 even:rotate-1 hover:rotate-0 transition-transform duration-700 hover:duration-100 ease-in-out"
     >
       <div className="flex flex-col h-full">
-        <div>
-          <div className="flex items-center justify-between bg-slate-500 pl-5 pr-5 rounded-t-lg bg-img">
-            <div className="h-10 w-10 flex items-center justify-center border border-slate-200 dark:border-slate-700 rounded-full">
-              <img
-                alt={repo.name || 'Repository avatar'}
-                loading="lazy"
-                width="100px"
-                height="100px"
-                decoding="async"
-                className="rounded-full"
-                src={repo.owner.avatar_url}
-              />
-            </div>
+        <div className="flex items-center justify-between bg-slate-500 pl-5 pr-5 rounded-t-lg bg-img">
+          <div className="h-10 w-10 flex items-center justify-center border border-slate-200 dark:border-slate-700 rounded-full">
+            <img
+              alt={repo.name || 'Repository avatar'}
+              loading="lazy"
+              width="100px"
+              height="100px"
+              decoding="async"
+              className="rounded-full"
+              src={repo.owner.avatar_url}
+            />
           </div>
         </div>
         <div className="pr-5 pl-5 pb-5 pt-4">
@@ -107,6 +99,10 @@ const ProjectCard = ({ repo, colors }) => {
   );
 };
 
+ProjectComp.propTypes = {
+  maxProjects: PropTypes.number.isRequired,
+};
+
 ProjectCard.propTypes = {
   repo: PropTypes.shape({
     html_url: PropTypes.string.isRequired,
@@ -114,7 +110,7 @@ ProjectCard.propTypes = {
     description: PropTypes.string,
     owner: PropTypes.shape({
       avatar_url: PropTypes.string.isRequired,
-    }),
+    }).isRequired,
     language: PropTypes.string,
     open_issues_count: PropTypes.number,
   }).isRequired,
