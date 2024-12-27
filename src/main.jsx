@@ -5,7 +5,6 @@ import { Home, PageNotFound, Projects, AboutMe, Layout} from "./index";
 import { Provider } from "react-redux";
 import { store } from "./App/Store";
 import { useSelector } from 'react-redux';
-
 import "./index.css";
 
 const App = () => {
