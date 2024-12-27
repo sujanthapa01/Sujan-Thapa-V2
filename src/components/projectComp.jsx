@@ -1,4 +1,5 @@
 import useFetchGithubRepos from '@/lib/githubApi/github';
+import PropTypes from 'prop-types';
 import { handleLanguageBadgeColor } from '@/helpers/languagebadgeui';
 import ProjectCard from './projectCard';
 import Skeleton from 'react-loading-skeleton';
@@ -38,5 +39,9 @@ const ProjectComp = ({ maxProjects }) => {
     </div>
   );
 };
+ProjectComp.prototype ={
+   maxProjects : PropTypes.number.isRequired
+}
+
 
 export default ProjectComp;
