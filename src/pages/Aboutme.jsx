@@ -1,5 +1,5 @@
 import Cards from '../components/cards';
-import bioimg from "../assets/bioimg.png";
+import bioimg from "../assets/bioimg.webp";
 import Header from '../components/Header';
 
 function Aboutme() {
