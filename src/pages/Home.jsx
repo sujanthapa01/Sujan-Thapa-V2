@@ -7,15 +7,15 @@ import Cards from "../components/cards";
 import Header from "../components/Header";
 import ProjectComp from "../components/projectComp";
 import { Link } from "react-router-dom";
-import content from "@/data/home.json";
-import TooltipComponent from "@/components/tooltip";
+import content from "@/data/data.js";
+import TooltipComponent from "@/components/tooltip/tooltip-sociallink/tooltip";
 
 function Home() {
   const currentDate = new Date();
 
   return (
     <>
-      <Header />
+    
       <section>
         <div className="max-w-[700px]">
           <div className="pt-8 pb-10">
@@ -56,24 +56,28 @@ function Home() {
             <div className="space-y-10">
               <ul className="flex flex-wrap gap-10 mt-[37px] text-slate-500 dark:text-slate-400">
                 <li> <TooltipComponent
+                type="github"
                   link={content.socialLinks.github}
                   icon={github}
                   alt="GitHub"
                   content="Visit my GitHub"
                 /></li>
                 <li><TooltipComponent
+                type="instagram"
                   link={content.socialLinks.instagram}
                   icon={instagram}
                   alt="Instagram"
                   content="Follow me on Instagram"
                 /></li>
                 <li> <TooltipComponent
+                type="gmail"
                   link={content.socialLinks.email}
                   icon={mail}
                   alt="Email"
                   content="Send me an email"
                 /></li>
                 <li> <TooltipComponent
+                type="spotify"
                   link={content.socialLinks.spotify}
                   icon={spotify}
                   alt="Spotify"

@@ -1,17 +1,19 @@
-import useFetchGithubRepos from '@/lib/githubApi/github';
+import useFetchGithubData from '@/lib/githubApi/github';
 import PropTypes from 'prop-types';
 import { handleLanguageBadgeColor } from '@/helpers/languagebadgeui';
 import ProjectCard from './projectCard';
 import Skeleton from 'react-loading-skeleton';
+import data from '@/data/data';
 
 const ProjectComp = ({ maxProjects }) => {
-  const { repos, loading } = useFetchGithubRepos("sujanthapa01");
-  const limitedProjects = repos.slice(0, maxProjects);
+  const { data: repos, loading: reposLoading } = useFetchGithubData(data.github_username, 'repos');
   const { badgeColor } = handleLanguageBadgeColor();
+
+  const limitedProjects = repos ? repos.slice(0, maxProjects) : [];
 
   return (
     <div>
-      {loading ? (
+      {reposLoading ? (
         <div className="grid sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-5">
           {Array.from({ length: maxProjects }, (_, index) => (
             <div
@@ -41,7 +43,7 @@ const ProjectComp = ({ maxProjects }) => {
 };
 
 ProjectComp.propTypes = {
-  maxProjects: PropTypes.number.isRequired
+  maxProjects: PropTypes.number.isRequired,
 };
 
 export default ProjectComp;

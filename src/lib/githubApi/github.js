@@ -1,25 +1,30 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const useFetchGithubRepos = (username) => {
-  const [repos, setRepos] = useState([]);
+const useFetchGithubData = (username, type = 'repos') => {
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const cachedData = localStorage.getItem(`${username}_githubRepos`);
+        const cacheKey = `${username}_github${type === 'repos' ? 'Repos' : 'Profile'}`;
+        const cachedData = localStorage.getItem(cacheKey);
+
         if (cachedData) {
-          setRepos(JSON.parse(cachedData));
+          setData(JSON.parse(cachedData));
           setLoading(false);
         } else {
-          const response = await fetch(`https://api.github.com/users/${username}/repos`);
-          if (!response.ok) {
-            throw new Error('Failed to fetch data');
-          }
-          const json = await response.json();
-          setRepos(json);
-          localStorage.setItem(`${username}_githubRepos`, JSON.stringify(json));
+          const url =
+            type === 'repos'
+              ? `https://api.github.com/users/${username}/repos`
+              : `https://api.github.com/users/${username}`;
+
+          const response = await axios.get(url);
+
+          setData(response.data);
+          localStorage.setItem(cacheKey, JSON.stringify(response.data));
           setLoading(false);
         }
       } catch (err) {
@@ -30,9 +35,9 @@ const useFetchGithubRepos = (username) => {
     };
 
     fetchData();
-  }, [username]);
+  }, [username, type]);
 
-  return { repos, loading, error };
+  return { data, loading, error };
 };
 
-export default useFetchGithubRepos;
+export default useFetchGithubData;
