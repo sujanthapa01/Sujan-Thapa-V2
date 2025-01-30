@@ -1,5 +1,5 @@
 import Arrow from "../assets/Arrow.png";
-import img3 from "../assets/img3.png";
+import img3 from "../assets/img3.webp";
 function cards() {
   return (
     <>
@@ -10,8 +10,7 @@ function cards() {
             className="rounded-2xl border-[2px] object-cover"
             loading="lazy"
             decoding="async"
-            alt=""
-            srcSet=""
+            alt="loading..."
             style={{ width: "100% ", height: "160px" }}
           />
           <a

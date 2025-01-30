@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import myimg from "../assets/myimg.jpeg";
+import myimg from "../assets/myimg.webp";
 
 function PageNotFound() {
   return (

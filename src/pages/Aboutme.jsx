@@ -1,12 +1,11 @@
 import Cards from '../components/cards';
-import bioimg from "../assets/bioimg.png";
+import bioimg from "../assets/bioimg.webp";
 import Header from '../components/Header';
 
 function Aboutme() {
   return (
 
     <>
-      <Header />
       <div className='grow md:flex space-y-8 md:space-y-0 md:space-x-8 pt-[1.5rem] md:pt-[1.5rem] lg-pt-[4rem] xl:pt-[4rem] pb-16 md:pb-20'>
         <div className='grow'>
           <div className='min-w-[200px] md:min-w-0'>

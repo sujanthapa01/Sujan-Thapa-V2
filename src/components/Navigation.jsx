@@ -6,7 +6,7 @@ import Abotmeactive from "../assets/Aboutme-active.png";
 import Porjectactive from "../assets/Project-active.png";
 import Aboutme from "../assets/Aboutme-icon.png";
 import { useLocation} from "react-router-dom";
-import myimg from "../assets/myimg.jpeg";
+import myimg from "../assets/myimg.webp";
 
 function Navigation() {
   // const [active, setActive] = useState('home');
