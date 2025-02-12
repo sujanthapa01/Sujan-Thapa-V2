@@ -53,14 +53,21 @@ const ProjectCard = ({ repo, colors }) => {
         </div>
 
       </div>
-      <div className='w-full flex justify-end items-center p-2'>
+  {repo.homepage? ( <div className='w-full flex justify-end items-center p-3'>
       <a href={repo.homepage}  >
       <div className="text-sky-500 flex justify-center items-center w-8 h-8 bg-blue-100 dark:shadow-md  dark:bg-white/5 first-letter:blur-xl rounded-lg    ">
+        <svg className="fill-current bg-color-500" xmlns="http://www.w2.org/2000/svg" width="12" height="12">
+          <path d="M8.586 5 6.293 1.707 7.707.293 13.414 6l-5.707 5.707-1.414-1.414L9.586 7H0V5h9.586Z"></path>
+        </svg>
+      </div>
+      </a></div>):( <div className='w-full flex justify-end items-center p-2'>
+     
+      <div className="text-sky-500 flex justify-center items-center w-8 h-8 ">
         <svg className="fill-current " xmlns="http://www.w3.org/2000/svg" width="12" height="12">
           <path d="M9.586 5 6.293 1.707 7.707.293 13.414 6l-5.707 5.707-1.414-1.414L9.586 7H0V5h9.586Z"></path>
         </svg>
       </div>
-      </a></div>
+   </div>)}   
     </a>
   );
 };
