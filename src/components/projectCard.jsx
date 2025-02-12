@@ -23,38 +23,44 @@ const ProjectCard = ({ repo, colors }) => {
             </div>
           </div>
         </div>
-        <div className='pr-5 pl-5 pb-5 pt-4'>
-        <h1 className="text-lg font-aspekta font-[650] mb-1">{repo.name}</h1>
-        <p className="text-sm text-slate-500 dark:text-slate-400 mb-2">{repo.description}</p>
-        <div className="flex gap-2 mt-4">
-          {repo.language && (
-            <Badge
-              variant="default"
-              className={`${colors.textColor} ${colors.bgColor} font-normal px-2 py-[0]px`}
-            >
-              {repo.language}
-            </Badge>
-          )}
-          {repo.open_issues_count ? (
-            <Badge
-              variant="default"
-              className="pr-[4px] py-[0px] bg-gray-50 text-blue-500 font-normal dark:text-black"
-            >
-              <span>Issues</span>
-              <div className="bg-red-500 text-white px-[5px] rounded-full ml-[8px]">
-                {repo.open_issues_count}
-              </div>
-            </Badge>
-          ) : null}
+        <div className='pr-5 pl-5 pb-5 pt-4  '>
+          <>  <h1 className="text-lg font-aspekta font-[650] mb-1">{repo.name}</h1>
+            <p className="text-sm text-slate-500 dark:text-slate-400 mb-2">{repo.description}</p>
+            <div className="flex gap-2 mt-4">
+              {repo.language && (
+                <Badge
+                  variant="default"
+                  className={`${colors.textColor} ${colors.bgColor} font-normal px-2 py-[0]px`}
+                >
+                  {repo.language}
+                </Badge>
+              )}
+              {repo.open_issues_count ? (
+                <Badge
+                  variant="default"
+                  className="pr-[4px] py-[0px] bg-gray-50 text-blue-500 font-normal dark:text-black"
+                >
+                  <span>Issues</span>
+                  <div className="bg-red-500 text-white px-[5px] rounded-full ml-[8px]">
+                    {repo.open_issues_count}
+                  </div>
+                </Badge>
+              ) : null}
+
+            </div>
+            </>
+     
         </div>
+
       </div>
-    
-      </div>
-      <div className="text-sky-500 flex justify-end p-4 ">
-        <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="14" height="12">
+      <div className='w-full flex justify-end items-center p-2'>
+      <a href={repo.homepage}  >
+      <div className="text-sky-500 flex justify-center items-center w-8 h-8 bg-blue-100 dark:shadow-md  dark:bg-white/5 first-letter:blur-xl rounded-lg    ">
+        <svg className="fill-current " xmlns="http://www.w3.org/2000/svg" width="12" height="12">
           <path d="M9.586 5 6.293 1.707 7.707.293 13.414 6l-5.707 5.707-1.414-1.414L9.586 7H0V5h9.586Z"></path>
         </svg>
       </div>
+      </a></div>
     </a>
   );
 };

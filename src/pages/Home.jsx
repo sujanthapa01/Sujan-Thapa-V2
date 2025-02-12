@@ -4,7 +4,6 @@ import instagram from "../assets/scoial-icons/instagram.webp";
 import mail from "../assets/scoial-icons/gmail.webp";
 import spotify from "../assets/scoial-icons/spotify-black.webp";
 import Cards from "../components/cards";
-import Header from "../components/Header";
 import ProjectComp from "../components/projectComp";
 import { Link } from "react-router-dom";
 import content from "@/data/data.js";

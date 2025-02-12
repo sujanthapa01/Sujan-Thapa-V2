@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import{ forwardRef } from 'react';
 
 const SocialIcon = forwardRef(({ icon, alt, link, ...props }, ref) => {
   return (

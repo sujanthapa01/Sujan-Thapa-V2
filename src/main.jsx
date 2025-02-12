@@ -7,7 +7,7 @@ import { store } from "./App/Store";
 import { useSelector } from 'react-redux';
 import "./index.css";
 
-const App = () => {
+export const App = () => {
   const theme = useSelector((state) => state.theme.theme);
   useEffect(() => {
     if (theme === 'dark') {
